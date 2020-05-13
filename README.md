@@ -1,2 +1,11 @@
-# practica-es
+# Practica-ES
 Practica de ES
+
+
+# Participants
+
++ Nil Folquer - 1489483
++ Elián Fernández - 1530969
++ Pol Fernández - 1531031
++ Iker López - 
++ Pol Bermúdez -
