@@ -7,5 +7,5 @@ Practica de ES
 + Nil Folquer - 1489483
 + Elián Fernández - 1530969
 + Pol Fernández - 1531031
-+ Iker López - 
++ Iker López - 1530936
 + Pol Bermúdez -
