@@ -71,4 +71,4 @@ classe Hotels:
     - Número d'hostes
     - Número d'habitacions
     - Durada en dies de la reserva
-    Prueba de Conflicto 2
+    Prueba de Conflicto
