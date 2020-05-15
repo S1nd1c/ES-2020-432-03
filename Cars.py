@@ -1,7 +1,11 @@
 class Cars:
 
-    def __init__(self, codi, marca, lloc, durada):
-        self.codi = codi
+    def __init__(self, id_cotxe, tipus, marca, model, ubi_recollida, ubi_devolucio, data_recollida, data_devolucio):
+        self.id_cotxe = id_cotxe
+        self.tipus = tipus
         self.marca = marca
-        self.lloc = lloc
-        self.durada = durada
+        self.model = model
+        self.ubi_recollida = ubi_recollida
+        self.ubi_devolucio = ubi_devolucio
+        self.data_recollida = data_recollida
+        self.data_devolucio = data_devolucio
