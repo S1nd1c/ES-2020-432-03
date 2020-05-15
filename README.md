@@ -8,4 +8,4 @@ Practica de ES
 + Elián Fernández - 1530969
 + Pol Fernández - 1531031
 + Iker López - 1530936
-+ Pol Bermúdez -
++ Pol Bermúdez - 1531374
