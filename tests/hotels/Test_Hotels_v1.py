@@ -12,7 +12,7 @@ import unittest
     # if not PROJECT_DIR is sys.path:
     #   sys.path.insert(0, PROJECT_DIR)
 
-from src.Hotels import Hotels
+from Hotels import Hotels
 
 class TestHotels(unittest.TestCase):
 

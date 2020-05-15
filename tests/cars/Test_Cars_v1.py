@@ -2,7 +2,7 @@ import os
 import sys
 import unittest
 
-from src.Cars import Cars
+from Cars import Cars
 
 class TestCars(unittest.TestCase):
 

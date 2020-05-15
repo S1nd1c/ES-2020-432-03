@@ -1,5 +1,5 @@
 import unittest
-from src.Hotels import Hotels
+from Hotels import Hotels
 from requests.exceptions import Timeout
 from unittest import mock
 

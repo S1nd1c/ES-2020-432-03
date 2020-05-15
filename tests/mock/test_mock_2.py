@@ -1,5 +1,5 @@
 import unittest
-from src.Cars import Cars
+from Cars import Cars
 from requests.exceptions import Timeout
 from unittest.mock import patch
 
