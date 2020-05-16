@@ -6,9 +6,13 @@ from Cars import Cars
 class Viaje:
 
 
-    def __init__(self, user:User, num_viajeros):
+    def __init__(self, user:User, num_viajeros, lista_vuelos, lista_hoteles, lista_coches, precio):
         self.user = user
         self.num_viajeros = num_viajeros
+        self.lista_coches = lista_coches
+        self.lista_vuelos = lista_vuelos
+        self.lista_hoteles = lista_hoteles
+        self.precio = precio
         
     def sumaPrecios(self):
         self.precioTotal =  precio_coches + precio_hoteles + precio_vuelos
