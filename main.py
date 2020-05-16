@@ -6,11 +6,12 @@ from Cars import Cars
 import Bank
 
 # Definicion de todos los vuelos, hoteles y coches
-car_1 = 'BMW'
-car_2 = 'Audi'
-car_3 = 'Seat'
-car_4 = 'Renault'
-car_5 = 'Peugeot'
+(self, id_cotxe, tipus, marca, ubi_recollida, ubi_devolucio,)
+car_1 = Cars('1234ABC', 'Suv', 'BMW', 'Calle Falsa 123', 'Aeropuerto', 7)
+car_2 = Cars('5089PFE', 'Deportivo', 'Audi', 'Plaza del Pueblo', 'Aeropuerto', 4)
+car_3 = Cars('6205MOA', 'Familiar', 'Renault', 'Calle Karl Marx', 'Aeropuerto', 2)
+car_4 = Cars('0427LTA', )
+car_5 = Cars('9562MBC', )
 
 vuelo1 = Flights('15612F', 'MADRID', num_passatgers, 55)
 vuelo2 = Flights('68745A', 'ESTAMBUL', num_passatgers, 90)
