@@ -23,3 +23,11 @@ class Viaje:
     def rmDestino(self, vol:Flights):
         if vol not in llista_vols:
             self.llista_vols.remove(vol)
+
+
+    def calcular_precio_vuelos(self):
+        preu = 0
+        for i in self.llista_vols:
+            preu += i.preu * self.num_viajeros
+        return preu
+            
