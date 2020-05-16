@@ -8,7 +8,7 @@ class PaymentData:
         self.preu = preu
 
     def solicita_dades_pagament(nom,preu):
-        nb = input('Introdueix el tipus de pagament: ')
-        nb = input('Introdueix el numero de la targeta: ')
-        nb = input('Introdueix el codi de la targeta: ')
+        tipus = input('Introdueix el tipus de pagament: ')
+        numero = input('Introdueix el numero de la targeta: ')
+        codi = input('Introdueix el codi de la targeta: ')
         PaymentData(tipus,nom,numero,codi,preu)
