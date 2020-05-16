@@ -1,3 +1,6 @@
+import Booking
+from User import User
+
 class Hotels:
 
     def __init__(self, id_hotel, ciutat, direccio, preu, data_entrada, data_sortida, num_habs):

@@ -1,3 +1,6 @@
+from Rentalcars import Rentalcars
+import User
+
 class Cars:
 
     def __init__(self, id_cotxe, tipus, marca, model, ubi_recollida, ubi_devolucio, data_recollida, data_devolucio):

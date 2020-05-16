@@ -14,7 +14,7 @@ class Viaje:
         self.num_viajeros = num_viajeros
         
     def sumaPrecios(self, precio_hoteles, precio_coches, precio_vuelos):
-        self.precioTotal =  precio_coches + precio_hoteles + precio_vuelos
+        self.precioTotal =  precio_cocheºs + precio_hoteles + precio_vuelos
 
     def addDestino(self, vol:Flights):
         if vol not in llista_vols:
