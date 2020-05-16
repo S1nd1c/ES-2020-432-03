@@ -8,4 +8,12 @@ class Hotels:
         self.data_entrada = data_entrada
         self.data_sortida = data_sortida
         self.num_habs = num_habs
+
+
+    def reserva_hotel(self, user:User):
+        booking = Booking.Booking()
         
+        if booking.confirm_reserve(user, self):
+            return True
+        else:
+            return False    
