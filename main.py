@@ -14,8 +14,8 @@ from Flights import Flights
 car_1 = 'BMW'
 car_2 = 'Audi'
 car_3 = 'Seat'
-car_4 = 'Renault'
-car_5 = 'Peugeot'
+car_4 = Cars('6545JRY', '4x4', 'Jeep', 'Calle Aragón, 12', 'Aeropuerto', 14)
+car_5 = Cars('1561GHR', 'Deportivo', 'Peugeot', 'Plaza Catalunya', 'Aeropuerto', 7)
 
 vuelo1 = Flights('15612F', 'MADRID', num_passatgers, 55)
 vuelo2 = Flights('68745A', 'ESTAMBUL', num_passatgers, 90)
