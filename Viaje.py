@@ -10,7 +10,7 @@ class Viaje:
         self.user = user
         self.num_viajeros = num_viajeros
         
-    def sumaPrecios(self, precio_hoteles, precio_coches, precio_vuelos):
+    def sumaPrecios(self):
         self.precioTotal =  precio_coches + precio_hoteles + precio_vuelos
 
     def addDestino(self, vol:Flights):
