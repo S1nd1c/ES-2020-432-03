@@ -2,6 +2,9 @@ from User import User
 from Hotels import Hotels
 from Flights import Flights
 from Cars import Cars
+from Skyscanner import Skyscanner
+
+
 
 class Viaje:
 
@@ -68,4 +71,15 @@ class Viaje:
     def añadirCoches(self, lista_coches):
         self.lista_coches = lista_coches
 
+    def confirmaReserva(self):
+        #Confirmacion de vuelos
+        if not self.lista_vuelos:
+            raise ValueError("Añade vuelos a la clase para poder reservarlos")
+
+        for vuelo in lista_vuelos:
+            sksc = Skyscanner()
+            sksc.confirm_reserve(self.user, vuelo)
+        #Confirmacion de hoteles
+
+        #Confirmacion de coches
 
