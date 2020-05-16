@@ -7,3 +7,4 @@ class Viaje:
 
     def __init__(self, user:User):
         self.user = user
+        
