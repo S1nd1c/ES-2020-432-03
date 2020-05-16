@@ -28,7 +28,7 @@ class Viaje:
         final_price = 0
 
         for coche in self.lista_coches:
-            final_price += (coche.preu * (coche.preu % self.num_viajeros))
+            final_price += (coche.preu * (coche.preu % self.num_viajeros) * coche.dias_estancia)
         
         return final_price
 
