@@ -7,4 +7,8 @@ class Viaje:
 
     def __init__(self, user:User):
         self.user = user
-        
+
+    def sumaPrecios(self, precio_hoteles, precio_coches, precio_vuelos):
+        self.precioTotal =  precio_coches + precio_hoteles + precio_vuelos
+
+    def  s

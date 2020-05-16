@@ -9,3 +9,11 @@ class Cars:
         self.ubi_devolucio = ubi_devolucio
         self.data_recollida = data_recollida
         self.data_devolucio = data_devolucio
+
+    def reserva_coche(self, user:User):
+        rentalcar = Rentalcar.Rentalcars()
+        
+        if rentalcar.confirm_reserve(user, self):
+            return True
+        else:
+            return False
