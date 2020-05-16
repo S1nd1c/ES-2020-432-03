@@ -3,9 +3,6 @@ from Hotels import Hotels
 from Flights import Flights
 from Cars import Cars
 
-
-llista_vols = [vol_1,vol_2,vol_3,vol_4,vol_5]
-
 class Viaje:
 
 
@@ -14,7 +11,7 @@ class Viaje:
         self.num_viajeros = num_viajeros
         
     def sumaPrecios(self, precio_hoteles, precio_coches, precio_vuelos):
-        self.precioTotal =  precio_cocheºs + precio_hoteles + precio_vuelos
+        self.precioTotal =  precio_coches + precio_hoteles + precio_vuelos
 
     def addDestino(self, vol:Flights):
         if vol not in llista_vols:
