@@ -3,8 +3,8 @@ from Hotels import Hotels
 from Flights import Flights
 from Cars import Cars
 from Skyscanner import Skyscanner
-
-
+from Booking import Booking
+from Rentalcars import Rentalcars
 
 class Viaje:
 
@@ -75,11 +75,15 @@ class Viaje:
         #Confirmacion de vuelos
         if not self.lista_vuelos:
             raise ValueError("Añade vuelos a la clase para poder reservarlos")
-
-        for vuelo in lista_vuelos:
+        for vuelo in self.lista_vuelos:
             sksc = Skyscanner()
             sksc.confirm_reserve(self.user, vuelo)
         #Confirmacion de hoteles
-
+        for hotel in self.lista_hoteles:
+            hotels = Booking()
+            hotels.confirm_reserve(self.user, hotel)
         #Confirmacion de coches
-
+        for coche in self.lista_coches:
+            cars = Rentalcars()
+            cars.confirm_reserve(self.user, coche)
+        return True
