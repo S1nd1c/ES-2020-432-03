@@ -14,7 +14,7 @@ class Cars:
         self.data_devolucio = data_devolucio
 
     def reserva_coche(self, user:User):
-        rentalcar = Rentalcar.Rentalcars()
+        rentalcar = Rentalcars.Rentalcars()
         
         if rentalcar.confirm_reserve(user, self):
             return True
