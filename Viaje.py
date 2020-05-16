@@ -10,26 +10,45 @@ class Viaje:
         self.user = user
         self.num_viajeros = num_viajeros
         
-    #TODO borrar las listas incializadas arriba 
+    def calculaPrecioVuelos(self):
+        if not self.lista_vuelos:
+            raise ValueError("Añade vuelos a la clase para poder calcular el precio")
 
-    def calculaPrecioCoche(self, lista_coches):
         final_price = 0
 
-        for coche in lista_coches:
+        for vuelo in self.lista_vuelos:
+            final_price += vuelo.preu * self.num_viajeros
+        return final_price
+        
+
+    def calculaPrecioCoche(self):
+        if not self.lista_coches:
+            raise ValueError("Añade coches a la clase para poder calcular el precio")
+        
+        final_price = 0
+
+        for coche in self.lista_coches:
             final_price += (coche.preu * (coche.preu % self.num_viajeros))
         
         return final_price
 
-    def calculaPrecioHoteles(self, lista_hoteles):
+    def calculaPrecioHoteles(self):
+        if not self.lista_hoteles:
+            raise ValueError("Añade hoteles a la clase para poder calcular el precio")
+
         final_price = 0
 
-        for hotel in lista_hoteles:
+        for hotel in self.lista_hoteles:
             final_price += (hotel.preu * hotel.num_habs * hotel.dies_estada)
 
         return final_price
 
     def sumaPrecios(self):
-        pass
+        precio_hoteles = self.calculaPrecioHoteles()
+        precio_coches = self.calculaPrecioCoche()
+        precio_vuelos = self.calculaPrecioVuelos()
+
+        return precio_coches + precio_hoteles + precio_vuelos
 
     def addDestino(self, vuelo:Flights):
         if vuelo not in self.lista_vuelos:
@@ -46,6 +65,7 @@ class Viaje:
     def añadirHoteles(self, lista_hoteles):
         self.lista_hoteles = lista_hoteles
 
-    
     def añadirCoches(self, lista_coches):
         self.lista_coches = lista_coches
+
+
