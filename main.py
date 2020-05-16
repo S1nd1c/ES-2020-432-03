@@ -11,32 +11,19 @@ from Flights import Flights
 
 
 # Definicion de todos los vuelos, hoteles y coches
-<<<<<<< HEAD
-car_1 = 'BMW'
-car_2 = 'Audi'
-car_3 = 'Seat'
-car_4 = Cars('6545JRY', '4x4', 'Jeep', 'Calle Aragón, 12', 'Aeropuerto', 14)
-car_5 = Cars('1561GHR', 'Deportivo', 'Peugeot', 'Plaza Catalunya', 'Aeropuerto', 7)
 
-vuelo1 = Flights('15612F', 'MADRID', num_passatgers, 55)
-vuelo2 = Flights('68745A', 'ESTAMBUL', num_passatgers, 90)
-vuelo3 = Flights('86452T', 'LONDRES', num_passatgers, 85)
-vuelo4 = Flights('32892P', 'AMSTERDAM', num_passatgers, 30)
-vuelo5 = Flights('98748L', 'BUDAPEST', num_passatgers, 65)
-=======
 #(self, id_cotxe, tipus, marca, ubi_recollida, ubi_devolucio,)
 car_1 = Cars("1234ABC", "Suv", "BMW", "Calle Falsa 123", "Aeropuerto", 7)
 car_2 = Cars("5089PFE", "Deportivo", "Audi", "Plaza del Pueblo", "Aeropuerto", 4)
 car_3 = Cars("6205MOA", "Familiar", "Renault", "Calle Karl Marx", "Aeropuerto", 2)
-car_4 = Cars("0427LTA", )
-car_5 = Cars("9562MBC", )
+car_4 = Cars('6545JRY', '4x4', 'Jeep', 'Calle Aragón, 12', 'Aeropuerto', 14)
+car_5 = Cars('1561GHR', 'Deportivo', 'Peugeot', 'Plaza Catalunya', 'Aeropuerto', 7)
 
 vuelo1 = Flights("15612F", "MADRID", num_passatgers, 55)
 vuelo2 = Flights("68745A", "ESTAMBUL", num_passatgers, 90)
 vuelo3 = Flights("86452T", "LONDRES", num_passatgers, 85)
 vuelo4 = Flights("32892P", "AMSTERDAM", num_passatgers, 30)
 vuelo5 = Flights("98748L", "BUDAPEST", num_passatgers, 65)
->>>>>>> 1c9104ac3c3a12e4c9ac44b9b9e5158d91e941ac
 
 # Definicion de todos los vuelos, hoteles y coches
 hotel_1 = Hotels(1, "Jerez de la Frontera", "Morenos, 10, 11402 Jerez de la Frontera, España", 26, 7)
