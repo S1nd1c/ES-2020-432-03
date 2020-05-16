@@ -10,8 +10,7 @@ class Cars:
         self.model = model
         self.ubi_recollida = ubi_recollida
         self.ubi_devolucio = ubi_devolucio
-        self.data_recollida = data_recollida
-        self.data_devolucio = data_devolucio
+        self.dias_estancia = dias_estancia
 
     def reserva_coche(self, user:User):
         rentalcar = Rentalcars.Rentalcars()
