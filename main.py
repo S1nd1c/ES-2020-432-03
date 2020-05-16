@@ -29,7 +29,7 @@ hotel_5 = Hotels(5, "Teruel", "Ronda del Turia, 1, 44002 Teruel, España", 35, 7
 #Listas con vuelos, hoteles y coches
 
 flight_list = [vuelo_1, vuelo_2, vuelo_3, vuelo_4, vuelo_5]
-hotel_list = []
+hotel_list = [hotel_1, hotel_2,hotel_3, hotel_4,hotel_5]
 car_list = [car_1,car_2,car_3,car_4,car_5]
 
 
