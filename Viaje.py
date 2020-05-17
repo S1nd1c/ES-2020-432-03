@@ -1,6 +1,9 @@
 from Hotels import Hotels
 from Flights import Flights
 from Cars import Cars
+from Skyscanner import Skyscanner
+from Booking import Booking
+from Rentalcars import Rentalcars
 
 class Viaje:
 
@@ -8,7 +11,12 @@ class Viaje:
     def __init__(self, user, num_viajeros):
         self.user = user
         self.num_viajeros = num_viajeros
-        
+        self.lista_coches = []
+        self.lista_vuelos = []
+        self.lista_hoteles = []
+        self.lista_destinos = []
+
+
     def calculaPrecioVuelos(self):
         if not self.lista_vuelos:
             raise ValueError("Añade vuelos a la clase para poder calcular el precio")
@@ -19,7 +27,6 @@ class Viaje:
             final_price += vuelo.preu * self.num_viajeros
         return final_price
         
-
     def calculaPrecioCoche(self):
         if not self.lista_coches:
             raise ValueError("Añade coches a la clase para poder calcular el precio")
@@ -52,10 +59,12 @@ class Viaje:
     def addDestino(self, vuelo:Flights):
         if vuelo not in self.lista_vuelos:
             self.lista_vuelos.append(vuelo)
+            self.lista_destinos.append(vuelo.destinacio)
     
     def rmDestino(self, vuelo:Flights):
         if vuelo not in self.lista_vuelos:
             self.lista_vuelos.remove(vuelo)
+            self.lista_destinos.remove(vuelo.destinacio)
 
     def añadirVuelos(self, lista_vuelos):
         self.lista_vuelos = lista_vuelos
