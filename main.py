@@ -64,10 +64,8 @@ def flux():
             errorDatosPago = False
     print("La aplicación inicia el proceso de confirmación de las reservas", "\n")
     print("Inicio confirmación del vuelo")
-    Viaje.confirmaReserva_vol() #esto devuelve true
-    if() #aqui quiero meter que si no devuelve true que vuelva a intentarlo pero if(!Viaje.confirmaReserva_vol()) no se puede no? como lo harias
-    # si no me entiendes esta parte es la del punto 10 del flujo y subflujiso 4 y 4b
-    
+     #esto devuelve true
+    if not Viaje.confirmaReserva_vol(): #lo que tenga que ocurrir
     
 
 
