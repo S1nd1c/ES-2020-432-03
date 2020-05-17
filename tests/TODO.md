@@ -17,6 +17,10 @@ destinos, la lista de vuelos es la esperada
 destinos, el precio del viaje es el esperado
 - [ ] Dado un viaje con múltiples destinos y más de un viajero, cuando el pago se
 realiza correctamente, se reporta que la acción se ha realizado correctamente
-- [ ] Dado un viaje con múltiples destinos y más de un viajero, cuando se confirma
-correctamente la reserva de los vuelos, se reporta que la acción se ha realizado
-correctamente
+- [ ] Dado un viaje con múltiples destinos y más de un viajero, cuando se confirma correctamente la reserva de los vuelos, se reporta que la acción se ha realizado correctamente
+- [ ] Dado un viaje con múltiples destinos y más de un viajero, cuando el usuario ha seleccionado un método de pago, el pago se realiza con el método de pago
+esperado 
+- [ ] Dado un viaje con múltiples destinos y más de un viajero, cuando se produce un
+error al realizar el pago, se reporta que la acción no se ha podido realizar
+- [ ] Dado un viaje con múltiples destinos y más de un viajero, cuando se produce
+error al confirmar los vuelos, se reporta que la acción no se ha podido realizar
