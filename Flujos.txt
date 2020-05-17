@@ -1,0 +1,87 @@
+Flujo Principal (FP)
+
+1. El usuario pulsa el botón “Realizar pago de la reserva”
+2. La aplicación solicita al usuario que introduzca sus datos de facturación, que incluyen:
+    a. Nombre completo
+    b. DNI
+    c. Dirección postal
+    d. Número de teléfono
+    e. Email
+3. El usuario introduce los datos de facturación y pulsa el botón “Continuar”
+4. La aplicación valida los datos de facturación
+    a. Si los datos de facturación son incorrectos se continúa con el S1
+5. La aplicación solicita al usuario que seleccione el método de pago entre los siguientes:
+    a. VISA
+    b. MasterCard
+6. El usuario selecciona el método de pago y pulsa el botón “Continuar”
+7. La aplicación solicita al usuario que introduzca los datos para realizar el pago, que
+incluyen:
+    a. Titular de la tarjeta de crédito
+    b. Número de la tarjeta de crédito
+    c. Código de seguridad de la tarjeta de crédito
+8. La aplicación valida los datos de pago
+    a. Si los datos de pago son incorrectos se continúa con el S2
+9. La aplicación inicia el proceso de pago usando la plataforma asociada al método de pago
+    a. Si el pago no se puede realizar se continúa con el S3
+10. La aplicación inicia el proceso de confirmación de las reservas
+    a. Se continúa con el S4
+    b. Si el usuario había reservado vehículos se continúa con el S5
+    c. Si el usuario había reservado alojamientos se continúa con el S6
+11. La aplicación envía la factura al usuario por email
+12. La aplicación confirma al usuario que el pago se ha realizado correctamente, que las
+reservas están confirmadas, y que se le ha enviado la factura por email
+13. El proceso de pago termina
+
+Sub flujo 1 (S1): datos de facturación incorrectos o incompletos
+1. La aplicación avisa al usuario que los datos de facturación introducidos son incorrectos o están incompletos
+2. Se continúa en el paso 3 del FP
+
+Sub flujo 2 (S2): datos para el pago incorrectos o incompletos
+1. La aplicación avisa al usuario que los datos para realizar el pago son incorrectos o están incompletos
+2. Se continúa en el paso 7 del FP
+
+Sub flujo 3 (S3): no se puede realizar el pago
+1. La aplicación avisa al usuario que no se ha podido realizar el pago
+2. Se continúa en el paso 7 del FP
+
+Sub flujo 4 (S4): confirmación de la reserva de los vuelos en Skyscanner
+1. La aplicación confirma la reserva de los vuelos en Skyscanner
+    a. Si la confirmación se realiza correctamente se continúa en el paso 10b del FP
+    b. Si la confirmación de la reserva de vuelos no se puede realizar se continúa con el S4b
+
+Sub flujo 4b (S4b): la reserva de los vuelos no se puede confirmar
+1. La aplicación reintenta confirmar la reserva de los vuelos
+    a. Si la confirmación se realiza correctamente se continúa en el paso 10b del FP
+    b. Si la confirmación falla por tercera vez se continúa en el paso 2 del S4b
+    c. Si la confirmación vuelve a fallar se continúa en el paso 1 del S4b
+2. La aplicación cancela el cargo realizado
+3. La aplicación avisa al usuario que ha habido un problema durante el proceso de confirmación de la reserva y que no se le ha efectuado ningún cargo
+4. Se continúa en el paso 13 del FP
+
+Sub flujo 5 (S5): reserva de los vehículos
+1. La aplicación confirma la reserva de los vehículos en Rentalcars
+    a. Si la confirmación se realiza correctamente se continúa en el paso 10c del flujo principal
+    b. Si la confirmación de la reserva de vehículos no se puede realizar se continúa con el S5b
+
+Sub flujo 5b (S5b): la reserva de los vehículos no se puede confirmar
+1. La aplicación reintenta confirmar la reserva de los vehículos
+    a. Si la confirmación se realiza correctamente se continúa en el paso 10c del FP
+    b. Si la confirmación falla por tercera vez se continúa en el paso 2 del S5b
+    c. Si la confirmación vuelve a fallar se continúa en el paso 1 del S5b
+2. La aplicación cancela el cargo realizado
+3. La aplicación avisa al usuario que ha habido un problema durante el proceso de confirmación de la reserva y que no se le ha efectuado ningún cargo
+4. Se continúa en el paso 13 del FP
+
+Sub flujo 6 (S6): reserva de los alojamientos
+1. La aplicación confirma la reserva de los alojamientos en Booking
+    a. Si la confirmación se realiza correctamente se continúa en el paso 11 del FP
+    b. Si la confirmación de la reserva de vehículos no se puede realizar se continúa con el S6b
+
+Sub flujo 6b (S6b): la reserva de los alojamientos no se puede confirmar
+1. La aplicación reintenta confirmar la reserva de los alojamientos
+    a. Si la confirmación se realiza correctamente se continúa en el paso 11 del FP
+    b. Si la confirmación falla por tercera vez se continúa en el paso 2 del S6b
+    c. Si la confirmación vuelve a fallar se continúa en el paso 1 del S6b
+2. La aplicación cancela el cargo realizado
+3. La aplicación avisa al usuario que ha habido un problema durante el proceso de confirmación de la reserva y que no se le ha efectuado ningún cargo
+4. Se continúa en el paso 13 del FP

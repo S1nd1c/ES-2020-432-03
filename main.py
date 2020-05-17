@@ -3,6 +3,7 @@ from User import User
 from Flights import Flights
 from Hotels import Hotels
 from Cars import Cars
+from PaymentData import PaymentData
 import Bank
 
 # Definicion de todos los vuelos, hoteles y coches
@@ -10,8 +11,8 @@ import Bank
 car_1 = Cars("1234ABC", "Suv", "BMW", "Calle Falsa 123", "Aeropuerto", 7)
 car_2 = Cars("5089PFE", "Deportivo", "Audi", "Plaza del Pueblo", "Aeropuerto", 4)
 car_3 = Cars("6205MOA", "Familiar", "Renault", "Calle Karl Marx", "Aeropuerto", 2)
-car_4 = Cars('6545JRY', '4x4', 'Jeep', 'Calle Aragón, 12', 'Aeropuerto', 14)
-car_5 = Cars('1561GHR', 'Deportivo', 'Peugeot', 'Plaza Catalunya', 'Aeropuerto', 7)
+car_4 = Cars("6545JRY", "4x4", "Jeep", "Calle Aragón, 12", "Aeropuerto", 14)
+car_5 = Cars("1561GHR", "Deportivo", "Peugeot", "Plaza Catalunya", "Aeropuerto", 7)
 
 vuelo_1 = Flights("15612F", "MADRID", num_passatgers, 55)
 vuelo_2 = Flights("68745A", "ESTAMBUL", num_passatgers, 90)
@@ -35,7 +36,22 @@ car_list = [car_1,car_2,car_3,car_4,car_5]
 
 # Aqui va el flujo principal más los subflujos
 def flux():
+    errorDatos = true
+    print("El usuario pulsa el botón “Realizar pago de la reserva”", "\n")
+    print("La aplicación solicita al usuario que introduzca sus datos de facturación", "\n")
+    while(errorDatos = true):
+        print("El usuario introduce los datos de facturación y pulsa el botón “Continuar”", "\n")
+        user = User("Jesus Gil y Gil", "75245896W", "654879524", "Calle Alamo 23, Marbella", "jgil@gmail.com")
+        print("El usuario introduce los datos de facturación y pulsa el botón “Continuar”", "\n")
+        print("La aplicación valida los datos de facturación", "\n")
+        if (errorDatos = true):
+            errorDatos = true
+            print("--Los datos de facturación introducidos son incorrectos o están incompletos--")
+        else:
+            errorDatos = false
+    print("La aplicación solicita al usuario que seleccione el método de pago (VISA/MASTERCARD) y los datos para realizar el pago", "\n")
+    print("El usuario selecciona el método de pago, introduce sus datos de pago y pulsa el botón “Continuar”", "\n")
+    datosPago = PaymentData.solicita_dades_pagament()
 
-    user = User("Jesus Gil y Gil", "75245896W", "654879524", "Calle Alamo 23, Marbella", "jgil@gmail.com")
 
     
