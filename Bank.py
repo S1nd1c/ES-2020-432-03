@@ -1,5 +1,5 @@
-from . import User
-from . import PaymentData
+from User import User
+from PaymentData import PaymentData
 
 
 class Bank:
