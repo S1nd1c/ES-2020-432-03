@@ -11,7 +11,7 @@ class User:
         self.direccio = direccio
         self.email = email
 
-    def validateInput():
+    def validateInput(self):
         return type(self.nom) == str and type(self.dni) == str and type(self.telefon) == str and type(self.direccio) == str and tpye(self.email) == str
 
     def pagament(self, viaje:Viaje):
