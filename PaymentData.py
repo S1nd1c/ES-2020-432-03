@@ -6,7 +6,7 @@ class PaymentData:
         self.numero = numero
         self.codi = codi
 
-    def solicita_dades_pagament(DNI):
+    def solicita_dades_pagament(nom,preu):
         tipus_targeta = input('Introdueix el tipus de pagament: ')
         numero = input('Introdueix el numero de la targeta: ')
         codi = input('Introdueix el codi de la targeta: ')
