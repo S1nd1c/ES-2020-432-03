@@ -85,10 +85,10 @@ class Viaje:
 
     def cancelaReserva_vehicle(self):
 
-    for coche in self.lista_coches:
-        cars = Rentalcars()
-        if cars.reserva_coche(self.user, coche) != True
-            return True
+        for coche in self.lista_coches:
+            cars = Rentalcars()
+            if cars.reserva_coche(self.user, coche) != True
+                return True
 
     def confirmaReserva_vol(self):
         if not self.lista_vuelos:
@@ -100,10 +100,10 @@ class Viaje:
 
     def cancelaReserva_vol(self):
 
-    for vuelo in self.lista_vuelos:
-        sksc = Skyscanner()
-        if sksc.reserva_vol(self.user, vuelo) != True
-            return True
+        for vuelo in self.lista_vuelos:
+            sksc = Skyscanner()
+            if sksc.reserva_vol(self.user, vuelo) != True
+                return True
 
     def confirmaReserva_hotel(self):
         if not self.lista_hoteles:
@@ -115,7 +115,7 @@ class Viaje:
     
     def cancelaReserva_hotel(self):
 
-    for hotel in self.lista_hoteles:
-        hotels = Booking()
-        if hotels.reserva_hotel(self.user, hotel) != True
-            return True
+        for hotel in self.lista_hoteles:
+            hotels = Booking()
+            if hotels.reserva_hotel(self.user, hotel) != True
+                return True
