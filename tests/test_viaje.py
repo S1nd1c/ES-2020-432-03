@@ -149,25 +149,23 @@ class test_viaje(unittest.TestCase):
         viaje1 = Viaje(usr, 2)
         viaje2 = Viaje(usr, 4)
         vuelos = [Flights(58555,"España",100),Flights(12345,"Italia",200)]
+        soladd = [0,0,200,400]
         solT = [600, 400, 1200, 800]
         aux = []
-        aux1 = []
         for i in range(len(vuelos)):
-            viaje1.addDestino(vuelos[i])
             aux.append(viaje1.sumaPrecios())
-                    
-        for i in range(len(vuelos)):
             aux.append(viaje2.sumaPrecios())
+            viaje1.addDestino(vuelos[i])
             viaje2.addDestino(vuelos[i]) 
-
+        self.assertEqual(aux,soladd)
         viajes = [viaje1,viaje2]
-
+        aux = []
         for destino in range(len(viajes)):
-            aux1.append(viajes[destino].sumaPrecios())
+            aux.append(viajes[destino].sumaPrecios())
             viajes[destino].rmDestino(58555,"España",100)
-            aux1.append(viajes[destino].sumaPrecios())
+            aux.append(viajes[destino].sumaPrecios())
 
-        self.assertEqual(solT, aux1)
+        self.assertEqual(solT, aux)
 
 
 
