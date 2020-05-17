@@ -66,23 +66,26 @@ class Viaje:
     def añadirCoches(self, lista_coches):
         self.lista_coches = lista_coches
 
-    def confirmaReserva(self):
-        #Confirmacion de vuelos
-        if not self.lista_vuelos:
-            raise ValueError("Añade vuelos a la clase para poder reservarlos")
-        for vuelo in self.lista_vuelos:
-            sksc = Skyscanner()
-            sksc.confirm_reserve(self.user, vuelo)
-        #Confirmacion de hoteles
-        if not self.lista_hoteles:
-            raise ValueError("Añade hoteles a la clase para poder reservarlos")
-        for hotel in self.lista_hoteles:
-            hotels = Booking()
-            hotels.confirm_reserve(self.user, hotel)
-        #Confirmacion de coches
+    def confirmaReserva_vehicle(self):
         if not self.lista_coches:
             raise ValueError("Añade coches a la clase para poder reservarlos")
         for coche in self.lista_coches:
             cars = Rentalcars()
             cars.confirm_reserve(self.user, coche)
+        return True
+
+    def confirmaReserva_vol(self):
+        if not self.lista_vuelos:
+            raise ValueError("Añade vuelos a la clase para poder reservarlos")
+        for vuelo in self.lista_vuelos:
+            sksc = Skyscanner()
+            sksc.confirm_reserve(self.user, vuelo)
+        return True
+
+    def confirmaReserva_hotel(self):
+        if not self.lista_hoteles:
+            raise ValueError("Añade hoteles a la clase para poder reservarlos")
+        for hotel in self.lista_hoteles:
+            hotels = Booking()
+            hotels.confirm_reserve(self.user, hotel)
         return True
