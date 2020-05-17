@@ -3,7 +3,7 @@ import User
 
 class Cars:
 
-    def __init__(self, id_cotxe, tipus, marca, ubi_recollida, ubi_devolucio, dias_estancia,preu):
+    def __init__(self, id_cotxe, tipus, marca, ubi_recollida, ubi_devolucio, dias_estancia, preu):
         self.id_cotxe = id_cotxe
         self.tipus = tipus
         self.marca = marca
