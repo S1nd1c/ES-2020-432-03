@@ -1,5 +1,5 @@
-import . from Skyscanner
-import . from User
+import Skyscanner from Skyscanner
+
 
 class Flights:
 
@@ -9,7 +9,7 @@ class Flights:
         self.num_passatgers = num_passatgers
         self.preu = preu
 
-    def reserva_vol(self, user:User):
+    def reserva_vol(self, user):
         skyscanner = Skyscanner.Skyscanner()
         
         if skyscanner.confirm_reserve(user, self):

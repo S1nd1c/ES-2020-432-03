@@ -1,15 +1,11 @@
-from User import User
 from Hotels import Hotels
 from Flights import Flights
 from Cars import Cars
-from Skyscanner import Skyscanner
-from Booking import Booking
-from Rentalcars import Rentalcars
 
 class Viaje:
 
 
-    def __init__(self, user:User, num_viajeros):
+    def __init__(self, user, num_viajeros):
         self.user = user
         self.num_viajeros = num_viajeros
         
@@ -64,7 +60,6 @@ class Viaje:
     def añadirVuelos(self, lista_vuelos):
         self.lista_vuelos = lista_vuelos
 
-    
     def añadirHoteles(self, lista_hoteles):
         self.lista_hoteles = lista_hoteles
 
