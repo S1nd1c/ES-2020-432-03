@@ -49,7 +49,7 @@ class test_viaje(unittest.TestCase):
             aux.append(viajes[i].calculaPrecioVuelos())
         self.assertEqual(precios, aux)
 
-     def test_precioVuelos0(self):
+    def test_precioVuelos0(self):
         viaje1 = Viaje(usr, 2)
         viaje2 = Viaje(usr, 4) 
         viajes = [viaje1, viaje2]
