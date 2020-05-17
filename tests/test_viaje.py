@@ -118,6 +118,17 @@ class test_viaje(unittest.TestCase):
             aux.append(viajes[i].sumaPrecios())
         self.assertEqual(precios, aux)
 
+    def test_rmDestino(self):
+        viaje1 = Viaje(usr, 2)
+        viaje2 = Viaje(usr, 4)
+        viajes = [viaje1,viaje2]
+        destinos = ["España","Italia"]
+
+        for destino in range(len(viajes)):
+            destinos.append(viajes[i].lista_destinos)
+            viajes[i].rmDestino(Flights(58555,"España",75))
+        self.assertEqual(viajes,destinos)
+
     def test_confirmaPagamentDestinacio(self):
         viaje1 = Viaje(usr, 1)
         viaje2 = Viaje(usr, 5)
