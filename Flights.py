@@ -9,7 +9,7 @@ class Flights:
         self.num_passatgers = num_passatgers
         self.preu = preu
 
-    def reserva_vol(self, user):
+    def reserva_vol(self, user:User):
         skyscanner = Skyscanner()
         
         if skyscanner.confirm_reserve(user, self):
