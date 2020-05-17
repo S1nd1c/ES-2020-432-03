@@ -8,7 +8,7 @@ class Flights:
         self.destinacio = destinacio
         self.preu = preu
 
-    def reserva_vol(self, user:User):
+    def reserva_vol(self, user):
         skyscanner = Skyscanner()
         
         if skyscanner.confirm_reserve(user, self):
