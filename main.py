@@ -39,32 +39,31 @@ def flux():
     errorDatos = True
     errorDatosPago = True
     errorPago = True
+    
     print("El usuario pulsa el botón “Realizar pago de la reserva”", "\n")
     print("La aplicación solicita al usuario que introduzca sus datos de facturación", "\n")
-    while(errorDatos = True):
+    while(errorDatos):
         print("El usuario introduce los datos de facturación y pulsa el botón “Continuar”", "\n")
         user = User("Jesus Gil y Gil", "75245896W", "654879524", "Calle Alamo 23, Marbella", "jgil@gmail.com")
         print("El usuario introduce los datos de facturación y pulsa el botón “Continuar”", "\n")
         print("La aplicación valida los datos de facturación", "\n")
-        if (errorDatos = True):
-            errorDatos = True
+        if (errorDatos):
             print("--Los datos de facturación introducidos son incorrectos o están incompletos--")
         else:
             errorDatos = False
-    while(errorDatosPago = True and errorPago = True):
+    while(errorDatosPago or errorPago):
         print("La aplicación solicita al usuario que seleccione el método de pago (VISA/MASTERCARD) y los datos para realizar el pago", "\n")
         print("El usuario selecciona el método de pago, introduce sus datos de pago y pulsa el botón “Continuar”", "\n")
         datosPago = PaymentData("VISA", "Jesus Gil y Gil", "4168 1847 6387 2184", "065")
-        if(errorDatosPago = True):
-            errorDatosPago = True
+        if(errorDatosPago):
             print("--Los datos para realizar el pago son incorrectos o están incompletos--")
-        elif(errorPago = True):
-            errorPago = True
+        elif(errorPago):
             print("--No se ha podido realizar el pago--")
         else:
             errorPago = False
             errorDatosPago = False
-
+    print("La aplicación inicia el proceso de confirmación de las reservas", "\n")
+    
 
 
     
