@@ -1,5 +1,4 @@
 import Booking
-from User import User
 
 class Hotels:
 
@@ -12,7 +11,7 @@ class Hotels:
         self.num_habs = num_habs
 
 
-    def reserva_hotel(self, user:User):
+    def reserva_hotel(self, user):
         booking = Booking.Booking()
         
         if booking.confirm_reserve(user, self):
