@@ -141,7 +141,7 @@ class test_viaje(unittest.TestCase):
 
         for destino in range(len(viajes)):
             destinos.append(viajes[destino])
-            viajes[destino].rmDestino(Flights(58555,"España",75))
+            viajes[destino].rmDestino(58555,"España",75)
         self.assertEqual(viajes,destinos)
 
     def test_confirmaPagamentDestinacio(self):
