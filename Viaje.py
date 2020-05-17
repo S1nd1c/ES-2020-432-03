@@ -61,10 +61,14 @@ class Viaje:
             self.lista_vuelos.append(vuelo)
             self.lista_destinos.append(vuelo.destinacio)
     
-    def rmDestino(self, vuelo:Flights):
-        if vuelo not in self.lista_vuelos:
-            self.lista_vuelos.remove(vuelo)
-            self.lista_destinos.remove(vuelo.destinacio)
+    def rmDestino(self, codi_vol, destinacio, preu):
+        index = 0
+        for i, vuelo in enumerate(self.lista_vuelos):
+            if vuelo.codi_vol == codi_vol and vuelo.destinacio == destinacio and vuelo.precio == preu:
+                index = i
+                break
+        self.lista_vuelos.remove(index)
+        self.lista_destinos.remove(index)
 
     def añadirVuelos(self, lista_vuelos):
         self.lista_vuelos = lista_vuelos

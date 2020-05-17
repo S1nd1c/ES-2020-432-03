@@ -129,6 +129,21 @@ class test_viaje(unittest.TestCase):
             viajes[i].rmDestino(Flights(58555,"España",75))
         self.assertEqual(viajes,destinos)
 
+    def test_rmDestinoVuelo(self):
+        viaje1 = Viaje(usr, 2)
+        viaje2 = Viaje(usr, 4)
+        viaje1.addDestino(Flights(58555,"España",75))
+        viaje1.addDestino(Flights(12345,"Italia",60))
+        viaje2.addDestino(Flights(58555,"España",75)) 
+        viaje2.addDestino(Flights(12345,"Italia",60))
+        viajes = [viaje1,viaje2]
+        destinos = ["España","Italia"]
+
+        for destino in range(len(viajes)):
+            destinos.append(viajes[destino])
+            viajes[destino].rmDestino(Flights(58555,"España",75))
+        self.assertEqual(viajes,destinos)
+
     def test_confirmaPagamentDestinacio(self):
         viaje1 = Viaje(usr, 1)
         viaje2 = Viaje(usr, 5)
