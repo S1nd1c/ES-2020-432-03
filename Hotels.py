@@ -11,7 +11,7 @@ class Hotels:
         self.num_habs = num_habs
 
 
-    def reserva_hotel(self, user):
+    def reserva_hotel(self, user:User):
         booking = Booking.Booking()
         
         if booking.confirm_reserve(user, self):
