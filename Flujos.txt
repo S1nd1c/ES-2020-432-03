@@ -1,0 +1,31 @@
+1. El usuario pulsa el botón “Realizar pago de la reserva”
+2. La aplicación solicita al usuario que introduzca sus datos de facturación, que incluyen:
+    a. Nombre completo
+    b. DNI
+    c. Dirección postal
+    d. Número de teléfono
+    e. Email
+3. El usuario introduce los datos de facturación y pulsa el botón “Continuar”
+4. La aplicación valida los datos de facturación
+    a. Si los datos de facturación son incorrectos se continúa con el S1
+5. La aplicación solicita al usuario que seleccione el método de pago entre los siguientes:
+    a. VISA
+    b. MasterCard
+6. El usuario selecciona el método de pago y pulsa el botón “Continuar”
+7. La aplicación solicita al usuario que introduzca los datos para realizar el pago, que
+incluyen:
+    a. Titular de la tarjeta de crédito
+    b. Número de la tarjeta de crédito
+    c. Código de seguridad de la tarjeta de crédito
+8. La aplicación valida los datos de pago
+    a. Si los datos de pago son incorrectos se continúa con el S2
+9. La aplicación inicia el proceso de pago usando la plataforma asociada al método de pago
+    a. Si el pago no se puede realizar se continúa con el S3
+10. La aplicación inicia el proceso de confirmación de las reservas
+    a. Se continúa con el S4
+    b. Si el usuario había reservado vehículos se continúa con el S5
+    c. Si el usuario había reservado alojamientos se continúa con el S6
+11. La aplicación envía la factura al usuario por email
+12. La aplicación confirma al usuario que el pago se ha realizado correctamente, que las
+reservas están confirmadas, y que se le ha enviado la factura por email
+13. El proceso de pago termina
