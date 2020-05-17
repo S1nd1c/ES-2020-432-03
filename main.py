@@ -67,17 +67,17 @@ def flux():
         print("La aplicación inicia el proceso de confirmación de las reservas", "\n")
         print("Inicio confirmación del vuelo", "\n")
         count= 0
-        while not Viaje.confirmaReserva_vol() or #Viaje.cancelaReserva_vol():
+        while not Viaje.confirmaReserva_vol() or not Viaje.cancelaReserva_vol():
             Viaje.confirmaReserva_vol()
             if not Viaje.confirmaReserva_vol():
                 count += 1
             if count == 3:
-                Viaje.cancelReserva_hotel()
+                Viaje.cancelaReserva_vol()
                 print("--Ha habido un error con la confirmación de la reserva, no se le le ha efectuado ningún cargo--", "\n")
                 pago = False
         print("Inicio confirmación del hotel", "\n")
         count= 0
-        while not Viaje.confirmaReserva_hotel() or #Viaje.cancelaReserva_hotel():
+        while not Viaje.confirmaReserva_hotel() or not Viaje.cancelaReserva_hotel():
             Viaje.confirmaReserva_hotel()
             if not Viaje.confirmaReserva_hotel():
                 count += 1
@@ -87,7 +87,7 @@ def flux():
                 Pago = False
         print("Inicio confirmación del coche", "\n")
         count= 0
-        while not Viaje.confirmaReserva_vehicle() or #Viaje.cancelaReserva_vehicle():
+        while not Viaje.confirmaReserva_vehicle() or not Viaje.cancelaReserva_vehicle():
             Viaje.confirmaReserva_vehicle()
             if not Viaje.confirmaReserva_vehicle():
                 count += 1

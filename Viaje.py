@@ -83,8 +83,7 @@ class Viaje:
             cars.confirm_reserve(self.user, coche)
         return True
 
-    def cancelaReserva_vehicle(self):
-
+    def cancelaReserva_vehicle(self): # OJO PIOJO A ESTA FUNCION
         for coche in self.lista_coches:
             cars = Cars()
             if cars.reserva_coche(self.user, coche) != True:
@@ -92,7 +91,7 @@ class Viaje:
             else:
                 return False
 
-    def confirmaReserva_vol(self):
+    def confirmaReserva_vol(self): 
         if not self.lista_vuelos:
             raise ValueError("Añade vuelos a la clase para poder reservarlos")
         for vuelo in self.lista_vuelos:
@@ -100,8 +99,7 @@ class Viaje:
             sksc.confirm_reserve(self.user, vuelo)
         return True
 
-    def cancelaReserva_vol(self):
-
+    def cancelaReserva_vol(self): # OJO PIOJO A ESTA FUNCION
         for vuelo in self.lista_vuelos:
             sksc = Flights()
             if sksc.reserva_vol(self.user, vuelo) != True:
@@ -117,8 +115,7 @@ class Viaje:
             hotels.confirm_reserve(self.user, hotel)
         return True
     
-    def cancelaReserva_hotel(self):
-
+    def cancelaReserva_hotel(self): # OJO PIOJO A ESTA FUNCION
         for hotel in self.lista_hoteles:
             hotels = Booking()
             if hotels.reserva_hotel(self.user, hotel) != True:
