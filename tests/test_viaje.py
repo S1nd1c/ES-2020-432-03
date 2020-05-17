@@ -81,7 +81,7 @@ class test_viaje(unittest.TestCase):
         for viaje in viajes:
             self.assertEqual(viaje.sumaPrecios(), 0)
 
-    def test_preuViatge(self):
+    def test_preuViatge2(self):
         viaje1 = Viaje(usr, 2)
         viaje2 = Viaje(usr, 4)
         viajes = [viaje1, viaje2]
