@@ -44,7 +44,7 @@ class test_viaje(unittest.TestCase):
         aux = []
         for i in len(viajes):
             aux.append(viajes[i].calculaPrecioVuelos())
-            viajes[i].addDestino(Flights(44343,"Mostoles",viajes[i].num_passatgers,200))
+            viajes[i].addDestino(Flights(44343,"Mostoles",200))
             aux.append(viajes[i].calculaPrecioVuelos())
         self.assertEqual(precios,aux)
     
