@@ -121,28 +121,29 @@ class test_viaje(unittest.TestCase):
     def test_rmDestino(self):
         viaje1 = Viaje(usr, 2)
         viaje2 = Viaje(usr, 4)
+        vuelos = [Flights(58555,"España",75),Flights(12345,"Italia",60)]
+        for i in range(len(vuelos)):
+            viaje1.addDestino(vuelos[i])
+            viaje2.addDestino(vuelos[i]) 
         viajes = [viaje1,viaje2]
         destinos = ["España","Italia"]
-
         for destino in range(len(viajes)):
-            destinos.append(viajes[i].lista_destinos)
-            viajes[i].rmDestino(Flights(58555,"España",75))
-        self.assertEqual(viajes,destinos)
+            viajes[destino].rmDestino(58555,"España",75)
+            for i in range(len(viajes[destino].lista_destinos)):
+                self.assertEqual(viajes[destino].lista_destinos[i],destinos[-1])
 
     def test_rmDestinoVuelo(self):
         viaje1 = Viaje(usr, 2)
         viaje2 = Viaje(usr, 4)
-        viaje1.addDestino(Flights(58555,"España",75))
-        viaje1.addDestino(Flights(12345,"Italia",60))
-        viaje2.addDestino(Flights(58555,"España",75)) 
-        viaje2.addDestino(Flights(12345,"Italia",60))
+        vuelos = [Flights(58555,"España",75),Flights(12345,"Italia",60)]
+        for i in range(len(vuelos)):
+            viaje1.addDestino(vuelos[i])
+            viaje2.addDestino(vuelos[i]) 
         viajes = [viaje1,viaje2]
-        destinos = ["España","Italia"]
-
         for destino in range(len(viajes)):
-            destinos.append(viajes[destino])
             viajes[destino].rmDestino(58555,"España",75)
-        self.assertEqual(viajes,destinos)
+            for i in range(len(viajes[destino].lista_vuelos)):
+                self.assertEqual(viajes[destino].lista_vuelos[i],vuelos[-1])
 
     def test_confirmaPagamentDestinacio(self):
         viaje1 = Viaje(usr, 1)
