@@ -64,6 +64,7 @@ def flux():
             errorDatosPago = False
     print("La aplicación inicia el proceso de confirmación de las reservas", "\n")
     
+    
 
 
     
