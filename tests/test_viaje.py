@@ -57,7 +57,7 @@ class test_viaje(unittest.TestCase):
         for viaje in viajes:
             self.assertEqual(viaje.calculaPrecioVuelo(), 0)
         
-     def test_precioHoteles0(self):
+    def test_precioHoteles0(self):
         viaje1 = Viaje(usr, 2)
         viaje2 = Viaje(usr, 4) 
         viajes = [viaje1, viaje2]
@@ -65,7 +65,7 @@ class test_viaje(unittest.TestCase):
         for viaje in viajes:
             self.assertEqual(viaje.calculaPrecioHoteles(), 0)
     
-     def test_precioCoches0(self):
+    def test_precioCoches0(self):
         viaje1 = Viaje(usr, 2)
         viaje2 = Viaje(usr, 4) 
         viajes = [viaje1, viaje2]
