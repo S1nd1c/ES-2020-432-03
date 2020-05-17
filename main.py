@@ -39,33 +39,64 @@ def flux():
     errorDatos = True
     errorDatosPago = True
     errorPago = True
-
+        
     print("El usuario pulsa el botón “Realizar pago de la reserva”", "\n")
     print("La aplicación solicita al usuario que introduzca sus datos de facturación", "\n")
-    while(errorDatos):
+    while errorDatos:
         print("El usuario introduce los datos de facturación y pulsa el botón “Continuar”", "\n")
         user = User("Jesus Gil y Gil", "75245896W", "654879524", "Calle Alamo 23, Marbella", "jgil@gmail.com")
         print("El usuario introduce los datos de facturación y pulsa el botón “Continuar”", "\n")
         print("La aplicación valida los datos de facturación", "\n")
-        if (errorDatos):
-            print("--Los datos de facturación introducidos son incorrectos o están incompletos--")
+        if errorDatos:
+            print("--Los datos de facturación introducidos son incorrectos o están incompletos--", "\n")
         else:
             errorDatos = False
-    while(errorDatosPago or errorPago):
+    while errorDatosPago or errorPago:
         print("La aplicación solicita al usuario que seleccione el método de pago (VISA/MASTERCARD) y los datos para realizar el pago", "\n")
         print("El usuario selecciona el método de pago, introduce sus datos de pago y pulsa el botón “Continuar”", "\n")
         datosPago = PaymentData("VISA", "Jesus Gil y Gil", "4168 1847 6387 2184", "065")
-        if(errorDatosPago):
-            print("--Los datos para realizar el pago son incorrectos o están incompletos--")
-        elif(errorPago):
-            print("--No se ha podido realizar el pago--")
+        if errorDatosPago:
+            print("--Los datos para realizar el pago son incorrectos o están incompletos--", "\n")
+        elif errorPago:
+            print("--No se ha podido realizar el pago--", "\n")
         else:
             errorPago = False
             errorDatosPago = False
     print("La aplicación inicia el proceso de confirmación de las reservas", "\n")
-    print("Inicio confirmación del vuelo")
-     #esto devuelve true
-    if not Viaje.confirmaReserva_vol(): #lo que tenga que ocurrir
+    print("Inicio confirmación del vuelo", "\n")
+    count= 0
+    while not Viaje.confirmaReserva_vol() or #Viaje.cancelaReserva_vol():
+        Viaje.confirmaReserva_vol()
+        if not Viaje.confirmaReserva_vol():
+            count += 1
+        if count == 3:
+            #Viaje.cancelReserva_hotel()
+            print("--Ha habido un error con la confirmación de la reserva, no se le le ha efectuado ningún cargo--", "\n")
+            #terminar proceso pago
+    print("Inicio confirmación del hotel", "\n")
+    count= 0
+    while not Viaje.confirmaReserva_hotel() or #Viaje.cancelaReserva_hotel():
+        Viaje.confirmaReserva_hotel()
+        if not Viaje.confirmaReserva_hotel():
+            count += 1
+        if count == 3:
+            #Viaje.cancelaReserva_hotel()
+            print("--Ha habido un error con la confirmación de la reserva, no se le le ha efectuado ningún cargo--", "\n")
+            #terminar proceso pago
+    print("Inicio confirmación del coche", "\n")
+    count= 0
+    while not Viaje.confirmaReserva_vehicle() or #Viaje.cancelaReserva_vehicle():
+        Viaje.confirmaReserva_vehicle()
+        if not Viaje.confirmaReserva_vehicle():
+            count += 1
+        if count == 3:
+            #Viaje.cancelaReserva_vehicle()
+            print("--Ha habido un error con la confirmación de la reserva, no se le le ha efectuado ningún cargo--", "\n")
+            #terminar proceso pago
+    print("--Pago realizado, reservas confirmadas, factura enviada por email--", "\n")
+    
+
+
     
 
 
