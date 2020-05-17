@@ -19,7 +19,7 @@ class Viaje:
 
     def calculaPrecioVuelos(self):
         if not self.lista_vuelos:
-            raise ValueError("Añade vuelos a la clase para poder calcular el precio")
+            return 0
 
         final_price = 0
 
@@ -29,7 +29,7 @@ class Viaje:
         
     def calculaPrecioCoche(self):
         if not self.lista_coches:
-            raise ValueError("Añade coches a la clase para poder calcular el precio")
+            return 0
         
         final_price = 0
 
@@ -40,7 +40,7 @@ class Viaje:
 
     def calculaPrecioHoteles(self):
         if not self.lista_hoteles:
-            raise ValueError("Añade hoteles a la clase para poder calcular el precio")
+            return 0
 
         final_price = 0
 
@@ -77,7 +77,7 @@ class Viaje:
 
     def confirmaReserva_vehicle(self):
         if not self.lista_coches:
-            raise ValueError("Añade coches a la clase para poder reservarlos")
+            return 0
         for coche in self.lista_coches:
             cars = Rentalcars()
             cars.confirm_reserve(self.user, coche)
@@ -93,7 +93,7 @@ class Viaje:
 
     def confirmaReserva_vol(self): 
         if not self.lista_vuelos:
-            raise ValueError("Añade vuelos a la clase para poder reservarlos")
+            return 0
         for vuelo in self.lista_vuelos:
             sksc = Skyscanner()
             sksc.confirm_reserve(self.user, vuelo)
@@ -109,7 +109,7 @@ class Viaje:
 
     def confirmaReserva_hotel(self):
         if not self.lista_hoteles:
-            raise ValueError("Añade hoteles a la clase para poder reservarlos")
+            return 0
         for hotel in self.lista_hoteles:
             hotels = Booking()
             hotels.confirm_reserve(self.user, hotel)

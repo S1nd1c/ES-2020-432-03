@@ -43,19 +43,19 @@ class test_viaje(unittest.TestCase):
         viajes = [viaje1, viaje2]
         precios = [400, 800]
         aux = []
-        for i in len(viajes):
+        for i in range(len(viajes)):
             viajes[i].addDestino(
-                Flights(44343, "Mostoles", viajes[i].num_passatgers, 200))
+                Flights(44343, "Mostoles", 200))
             aux.append(viajes[i].calculaPrecioVuelos())
         self.assertEqual(precios, aux)
 
-     def test_precioVuelos0(self):
+    def test_precioVuelos0(self):
         viaje1 = Viaje(usr, 2)
         viaje2 = Viaje(usr, 4) 
         viajes = [viaje1, viaje2]
 
         for viaje in viajes:
-            self.assertEqual(viaje.calculaPrecioVuelo(), 0)
+            self.assertEqual(viaje.calculaPrecioVuelos(), 0)
         
     def test_precioHoteles0(self):
         viaje1 = Viaje(usr, 2)
