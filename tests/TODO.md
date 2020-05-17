@@ -8,7 +8,7 @@
 - [X] Dado un viaje sin destinos, el precio total del hotel es cero
 - [X] Dado un viaje sin destinos, el precio total del coche es cero
 - [X] Dado un viaje sin destinos, el precio total del viaje es cero
-- [ ] Dado un viaje, cuando se añaden destinos, la lista de destinos es la esperada
+- [X] Dado un viaje, cuando se añaden destinos, la lista de destinos es la esperada
 - [ ] Dado un viaje, cuando se añaden destinos, la lista de vuelos es la esperada
 - [X] Dado un viaje, cuando se añaden destinos, el precio del viaje es el esperado
 - [X] Dado un viaje con más de un viajero, cuando se añaden destinos, el precio del
