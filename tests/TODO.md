@@ -11,7 +11,7 @@
 - [ ] Dado un viaje, cuando se añaden destinos, la lista de destinos es la esperada
 - [ ] Dado un viaje, cuando se añaden destinos, la lista de vuelos es la esperada
 - [ ] Dado un viaje, cuando se añaden destinos, el precio del viaje es el esperado
-- [P] Dado un viaje con más de un viajero, cuando se añaden destinos, el precio del
+- [X] Dado un viaje con más de un viajero, cuando se añaden destinos, el precio del
 viaje es el esperado
 - [ ] Dado un viaje con múltiples destinos y más de un viajero, cuando se quitan
 destinos, la lista de destinos es la esperada
