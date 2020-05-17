@@ -93,6 +93,18 @@ class test_viaje(unittest.TestCase):
             for k,j in enumerate(viaje1.lista_destinos):
                 self.assertEqual(j,ok[k])
 
+    def test_vuelos_ok(self):
+        viaje1 = Viaje(usr, 2)
+        dest1 = Flights(8452,"Villa Puri",100)
+        dest2 = Flights(5745,"Guarroman",50)
+        dests = [dest1,dest2]
+        ok = [dest1, dest2]
+        self.assertEqual(len(viaje1.lista_vuelos),0)
+        for i in range(len(dests)):
+            viaje1.addDestino(dests[i])
+            for k,j in enumerate(viaje1.lista_vuelos):
+                self.assertEqual(j,ok[k])
+
     def test_preuViatge(self):
         viaje1 = Viaje(usr, 1)
         viaje2 = Viaje(usr, 5)
