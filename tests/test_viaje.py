@@ -81,14 +81,14 @@ class test_viaje(unittest.TestCase):
         for viaje in viajes:
             self.assertEqual(viaje.sumaPrecios(), 0)
     
-    def destinos_ok(self):
+    def test_destinos_ok(self):
         viaje1 = Viaje(usr, 2)
         dest1 = Flights(1234,"Sant Esteve de les Roures",100)
         dest2 = Flights(4737,"Talavera de la Reina",50)
         dests = [dest1,dest2]
         ok = ["Sant Esteve de les Roures","Talavera de la Reina"]
-        for i in range(len(dest)):
-            self.assertEqual(len(viaje1.lista_destinos),0)
+        self.assertEqual(len(viaje1.lista_destinos),0)
+        for i in range(len(dests)):
             viaje1.addDestino(dests[i])
             for k,j in enumerate(viaje1.lista_destinos):
                 self.assertEqual(j,ok[k])
