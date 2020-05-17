@@ -1,5 +1,6 @@
 # Tests TO-DO mis parseritos :chart_with_upwards_trend: :es:
 
+## Class Viaje
 - [X] Dado un viaje con más de un viajero, el número de viajeros es el esperado
 - [X] Dado un viaje sin destinos, la lista de destinos está vacía
 - [X] Dado un viaje sin destinos, la lista de vuelos está vacía
