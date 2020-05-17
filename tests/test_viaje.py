@@ -37,16 +37,16 @@ class test_viaje(unittest.TestCase):
         for viaje in viajes:
             self.assertTrue(not viaje.lista_vuelos)
 
-    def test_preuViatge(self):
+    def test_preuViatge_passtgers(self):
         viaje1 = Viaje(usr, 2)
         viaje2 = Viaje(usr, 4)
         viajes = [viaje1, viaje2]
-        precios = [400, 800]
+        precios = [0,400,0,800]
         aux = []
         for i in range(len(viajes)):
-            viajes[i].addDestino(
-                Flights(44343, "Mostoles", 200))
-            aux.append(viajes[i].calculaPrecioVuelos())
+            aux.append(viajes[i].sumaPrecios())
+            viajes[i].addDestino(Flights(44343, "Mostoles", 200))
+            aux.append(viajes[i].sumaPrecios())
         self.assertEqual(precios, aux)
 
     def test_precioVuelos0(self):
@@ -80,4 +80,7 @@ class test_viaje(unittest.TestCase):
 
         for viaje in viajes:
             self.assertEqual(viaje.sumaPrecios(), 0)
+    
+    def destinos_ok(self):
+        viaje1 = Viaje(usr, 2)
 
