@@ -1,11 +1,7 @@
-from . import User
-from . import Flights
-
-
 class Skyscanner():
 
     def __init__(self):
         pass
 
-    def confirm_reserve(self, user: User, flights: Flights) -> bool:
+    def confirm_reserve(self, user, flights) -> bool:
         return True

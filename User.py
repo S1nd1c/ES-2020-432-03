@@ -12,7 +12,7 @@ class User:
         self.email = email
 
     def validateInput(self):
-        return type(self.nom) == str and type(self.dni) == str and type(self.telefon) == str and type(self.direccio) == str and tpye(self.email) == str
+        return type(self.nom) == str and type(self.dni) == str and type(self.telefon) == str and type(self.direccio) == str and type(self.email) == str
 
     def pagament(self, viaje:Viaje):
         viaje.sumaPrecios()

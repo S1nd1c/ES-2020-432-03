@@ -10,4 +10,4 @@ class test_user(unittest.TestCase):
 
     def test_validate(self):
         for i, user in enumerate(users):
-            unittest.assertEqual(user.validateInput(), user_flags[i])
+            self.assertEqual(user.validateInput(), user_flags[i])
