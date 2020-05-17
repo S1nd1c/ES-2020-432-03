@@ -4,7 +4,7 @@ from Cars import Cars
 from Skyscanner import Skyscanner
 from Booking import Booking
 from Rentalcars import Rentalcars
-
+from Bank import Bank
 class Viaje:
 
 
@@ -122,3 +122,15 @@ class Viaje:
                 return True
             else:
                 return False
+
+    def reservarYpagar(self, payment_data):
+        self.confirmaReserva_hotel()
+        self.confirmaReserva_vehicle()
+        self.confirmaReserva_vol()
+        self.precio = self.sumaPrecios()
+
+        bank = Bank()
+        if bank.do_payment(self.user, payment_data):
+            return True
+        else:
+            return False

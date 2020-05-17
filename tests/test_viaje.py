@@ -2,6 +2,7 @@ import unittest
 from Viaje import *
 from User import User
 from Flights import Flights
+from PaymentData import PaymentData
 
 usr = User("Jesus Gil y Gil", "75245896W", "654879524",
            "Calle Alamo 23, Marbella", "jgil@gmail.com")
@@ -127,3 +128,14 @@ class test_viaje(unittest.TestCase):
             destinos.append(viajes[i].lista_destinos)
             viajes[i].rmDestino(Flights(58555,"España",75))
         self.assertEqual(viajes,destinos)
+
+    def test_confirmaPagamentDestinacio(self):
+        viaje1 = Viaje(usr, 1)
+        viaje2 = Viaje(usr, 5)
+        viajes = [viaje1, viaje2]
+        test_res = [True, True]
+        for viaje in viajes:
+            viaje.addDestino(Flights(87465, "Martorell", 200))
+        payData = PaymentData('VISA', 'Jesus Gil y Gil', '9999999999999999', '433')
+        for i, viaje in enumerate(viajes):
+            self.assertEqual(viaje.reservarYpagar(payData), test_res[i])
