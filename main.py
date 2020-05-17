@@ -36,22 +36,35 @@ car_list = [car_1,car_2,car_3,car_4,car_5]
 
 # Aqui va el flujo principal más los subflujos
 def flux():
-    errorDatos = true
+    errorDatos = True
+    errorDatosPago = True
+    errorPago = True
     print("El usuario pulsa el botón “Realizar pago de la reserva”", "\n")
     print("La aplicación solicita al usuario que introduzca sus datos de facturación", "\n")
-    while(errorDatos = true):
+    while(errorDatos = True):
         print("El usuario introduce los datos de facturación y pulsa el botón “Continuar”", "\n")
         user = User("Jesus Gil y Gil", "75245896W", "654879524", "Calle Alamo 23, Marbella", "jgil@gmail.com")
         print("El usuario introduce los datos de facturación y pulsa el botón “Continuar”", "\n")
         print("La aplicación valida los datos de facturación", "\n")
-        if (errorDatos = true):
-            errorDatos = true
+        if (errorDatos = True):
+            errorDatos = True
             print("--Los datos de facturación introducidos son incorrectos o están incompletos--")
         else:
-            errorDatos = false
-    print("La aplicación solicita al usuario que seleccione el método de pago (VISA/MASTERCARD) y los datos para realizar el pago", "\n")
-    print("El usuario selecciona el método de pago, introduce sus datos de pago y pulsa el botón “Continuar”", "\n")
-    datosPago = PaymentData.solicita_dades_pagament()
+            errorDatos = False
+    while(errorDatosPago = True and errorPago = True):
+        print("La aplicación solicita al usuario que seleccione el método de pago (VISA/MASTERCARD) y los datos para realizar el pago", "\n")
+        print("El usuario selecciona el método de pago, introduce sus datos de pago y pulsa el botón “Continuar”", "\n")
+        datosPago = PaymentData("VISA", "Jesus Gil y Gil", "4168 1847 6387 2184", "065")
+        if(errorDatosPago = True):
+            errorDatosPago = True
+            print("--Los datos para realizar el pago son incorrectos o están incompletos--")
+        elif(errorPago = True):
+            errorPago = True
+            print("--No se ha podido realizar el pago--")
+        else:
+            errorPago = False
+            errorDatosPago = False
+
 
 
     

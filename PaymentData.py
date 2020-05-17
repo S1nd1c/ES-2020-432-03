@@ -1,13 +1,12 @@
 class PaymentData:
 
-    def __init__(self, tipus_targeta, nom, numero, codi, preu):
+    def __init__(self, tipus_targeta, nom, numero, codi):
         self.tipus_targeta = tipus_targeta
         self.nom = nom
         self.numero = numero
         self.codi = codi
-        self.preu = preu
 
-    def solicita_dades_pagament(nom,DNI):
+    def solicita_dades_pagament(DNI):
         tipus_targeta = input('Introdueix el tipus de pagament: ')
         numero = input('Introdueix el numero de la targeta: ')
         codi = input('Introdueix el codi de la targeta: ')
