@@ -2,8 +2,11 @@
 
 - [X] Dado un viaje con más de un viajero, el número de viajeros es el esperado
 - [X] Dado un viaje sin destinos, la lista de destinos está vacía
-- [ ] Dado un viaje sin destinos, la lista de vuelos está vacía
-- [ ] Dado un viaje sin destinos, el precio del viaje es cero
+- [X] Dado un viaje sin destinos, la lista de vuelos está vacía
+- [X] Dado un viaje sin destinos, el precio total del vuelo es cero
+- [X] Dado un viaje sin destinos, el precio total del hotel es cero
+- [X] Dado un viaje sin destinos, el precio total del coche es cero
+- [X] Dado un viaje sin destinos, el precio total del viaje es cero
 - [ ] Dado un viaje, cuando se añaden destinos, la lista de destinos es la esperada
 - [ ] Dado un viaje, cuando se añaden destinos, la lista de vuelos es la esperada
 - [ ] Dado un viaje, cuando se añaden destinos, el precio del viaje es el esperado

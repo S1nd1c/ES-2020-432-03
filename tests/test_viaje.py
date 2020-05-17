@@ -45,3 +45,36 @@ class test_viaje(unittest.TestCase):
             viajes[i].addDestino(Flights(44343,"Mostoles",viajes[i].num_passatgers,200))
             aux.append(viajes[i].calculaPrecioVuelos())
         self.assertEqual(precios,aux)
+    
+     def test_precioVuelos0(self):
+        viaje1 = Viaje(usr, 2)
+        viaje2 = Viaje(usr, 4) 
+        viajes = [viaje1, viaje2]
+
+        for viaje in viajes:
+            self.assertEqual(viaje.calculaPrecioVuelo(), 0)
+        
+     def test_precioHoteles0(self):
+        viaje1 = Viaje(usr, 2)
+        viaje2 = Viaje(usr, 4) 
+        viajes = [viaje1, viaje2]
+
+        for viaje in viajes:
+            self.assertEqual(viaje.calculaPrecioHoteles(), 0)
+    
+     def test_precioCoches0(self):
+        viaje1 = Viaje(usr, 2)
+        viaje2 = Viaje(usr, 4) 
+        viajes = [viaje1, viaje2]
+
+        for viaje in viajes:
+            self.assertEqual(viaje.calculaPrecioVuelos(), 0)
+
+    def test_precioTotal0(self):
+        viaje1 = Viaje(usr, 2)
+        viaje2 = Viaje(usr, 4) 
+        viajes = [viaje1, viaje2]
+
+        for viaje in viajes:
+            self.assertEqual(viaje.sumaPrecios(), 0)
+
