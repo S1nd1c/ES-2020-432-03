@@ -72,7 +72,7 @@ def flux():
             if not Viaje.confirmaReserva_vol():
                 count += 1
             if count == 3:
-                #Viaje.cancelReserva_hotel()
+                Viaje.cancelReserva_hotel()
                 print("--Ha habido un error con la confirmación de la reserva, no se le le ha efectuado ningún cargo--", "\n")
                 pago = False
         print("Inicio confirmación del hotel", "\n")
@@ -82,7 +82,7 @@ def flux():
             if not Viaje.confirmaReserva_hotel():
                 count += 1
             if count == 3:
-                #Viaje.cancelaReserva_hotel()
+                Viaje.cancelaReserva_hotel()
                 print("--Ha habido un error con la confirmación de la reserva, no se le le ha efectuado ningún cargo--", "\n")
                 Pago = False
         print("Inicio confirmación del coche", "\n")
@@ -92,7 +92,7 @@ def flux():
             if not Viaje.confirmaReserva_vehicle():
                 count += 1
             if count == 3:
-                #Viaje.cancelaReserva_vehicle()
+                Viaje.cancelaReserva_vehicle()
                 print("--Ha habido un error con la confirmación de la reserva, no se le le ha efectuado ningún cargo--", "\n")
                 Pago = False
         print("--Pago realizado, reservas confirmadas, factura enviada por email--", "\n")
