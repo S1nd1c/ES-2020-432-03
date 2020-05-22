@@ -133,9 +133,4 @@ class Viaje:
         self.confirmaReserva_vehicle()
         self.confirmaReserva_vol()
         self.precio = self.sumaPrecios()
-
-        bank = Bank()
-        if bank.do_payment(self.user, payment_data):
-            return True
-        else:
-            return False
+        self.user.pagament(self,payment_data)

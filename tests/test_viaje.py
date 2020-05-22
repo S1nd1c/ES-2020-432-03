@@ -167,8 +167,6 @@ class test_viaje(unittest.TestCase):
 
         self.assertEqual(solT, aux)
 
-
-
     def test_confirmaPagamentDestinacio(self):
         viaje1 = Viaje(usr, 1)
         viaje2 = Viaje(usr, 5)
@@ -179,3 +177,11 @@ class test_viaje(unittest.TestCase):
         payData = PaymentData('VISA', 'Jesus Gil y Gil', '9999999999999999', '433')
         for i, viaje in enumerate(viajes):
             self.assertEqual(viaje.reservarYpagar(payData), test_res[i])
+    Dado un viaje con múltiples destinos y más de un viajero,
+    cuando el usuario ha seleccionado un método de pago, 
+    el pago se realiza con el método de pago esperado
+    def test_pageEsperado(self):
+        viaje1 = Viaje(usr, 2)
+        viaje1.addDestino(Flights(1234,"Sant Esteve de les Roures",100))
+        viaje1.addDestino(Flights(4737,"Talavera de la Reina",50))
+
