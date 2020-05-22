@@ -166,22 +166,27 @@ class test_viaje(unittest.TestCase):
             aux.append(viajes[destino].sumaPrecios())
 
         self.assertEqual(solT, aux)
-
+    def test_pageEsperado(self):
+        viaje1 = Viaje(usr, 2)
+        metode_pagament = PaymentData("Mastercard","Jesus Gil Padre",123456,4242)
+        viaje1.addDestino(Flights(1234,"Sant Esteve de les Roures",100))
+        viaje1.addDestino(Flights(4737,"Talavera de la Reina",50))
+        viaje1.user.seleccioMetodePagament(metode_pagament)
+        self.assertEqual(metode_pagament,viaje1.user.dades_pagament)
+    
     def test_confirmaPagamentDestinacio(self):
         viaje1 = Viaje(usr, 1)
         viaje2 = Viaje(usr, 5)
         viajes = [viaje1, viaje2]
         test_res = [True, True]
+        payData = PaymentData('VISA', 'Jesus Gil y Gil', '9999999999999999', '433')
         for viaje in viajes:
             viaje.addDestino(Flights(87465, "Martorell", 200))
-        payData = PaymentData('VISA', 'Jesus Gil y Gil', '9999999999999999', '433')
+            viaje.user.seleccioMetodePagament(payData)
         for i, viaje in enumerate(viajes):
-            self.assertEqual(viaje.reservarYpagar(payData), test_res[i])
-    Dado un viaje con múltiples destinos y más de un viajero,
-    cuando el usuario ha seleccionado un método de pago, 
-    el pago se realiza con el método de pago esperado
-    def test_pageEsperado(self):
-        viaje1 = Viaje(usr, 2)
-        viaje1.addDestino(Flights(1234,"Sant Esteve de les Roures",100))
-        viaje1.addDestino(Flights(4737,"Talavera de la Reina",50))
+            self.assertEqual(viaje.reservarYpagar(), test_res[i])
+    
+    
+
+        
 
