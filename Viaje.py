@@ -71,8 +71,9 @@ class Viaje:
         self.lista_destinos = nuevos_destinos
         self.lista_vuelos = nuevos_vuelos
 
-    def añadirVuelos(self, lista_vuelos):
-        self.lista_vuelos = lista_vuelos
+    def añadirVuelos(self, vuelo:Flights):
+        if vuelo not in self.lista_vuelos:
+            self.lista_vuelos.append(vuelo)
 
     def añadirHoteles(self, lista_hoteles):
         self.lista_hoteles = lista_hoteles
@@ -100,6 +101,8 @@ class Viaje:
         if not self.lista_vuelos:
             return 0
         for vuelo in self.lista_vuelos:
+            if vuelo.dataVolOK() == False:
+                raise ValueError("Error: La reserva de vols ha fallat")
             sksc = Skyscanner()
             sksc.confirm_reserve(self.user, vuelo)
         return True
