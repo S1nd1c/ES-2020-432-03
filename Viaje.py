@@ -137,5 +137,4 @@ class Viaje:
         if self.user.pagament(self):
             return True
         else:
-            print("Error: Pagament no realitzat correctament")
-            return False
+            raise ValueError("Error: Pagament no realitzat correctament")

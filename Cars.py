@@ -7,7 +7,6 @@ class Cars:
         self.id_cotxe = id_cotxe
         self.tipus = tipus
         self.marca = marca
-        self.model = model
         self.ubi_recollida = ubi_recollida
         self.ubi_devolucio = ubi_devolucio
         self.dias_estancia = dias_estancia
