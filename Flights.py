@@ -9,7 +9,7 @@ class Flights:
         self.preu = preu
 
     def dataVolOK(self):
-        return type(self.codi_vol) == str and type(self.destinacio) == str and type(self.preu) == int
+        return type(self.codi_vol) == int and type(self.destinacio) == str and type(self.preu) == int
     
     def reserva_vol(self, user):
         skyscanner = Skyscanner()
