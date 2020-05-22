@@ -128,9 +128,9 @@ class Viaje:
             else:
                 return False
 
-    def reservarYpagar(self, payment_data):
+    def reservarYpagar(self):
         self.confirmaReserva_hotel()
         self.confirmaReserva_vehicle()
         self.confirmaReserva_vol()
         self.precio = self.sumaPrecios()
-        self.user.pagament(self,payment_data)
+        self.user.pagament(self)

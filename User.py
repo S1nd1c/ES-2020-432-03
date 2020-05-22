@@ -14,7 +14,10 @@ class User:
     def validateInput(self):
         return type(self.nom) == str and type(self.dni) == str and type(self.telefon) == str and type(self.direccio) == str and type(self.email) == str
 
-    def pagament(self, viaje:Viaje,payment_data:PaymentData):
+    def seleccioMetodePagament(self,payment_data:PaymentData):
+        self.dades_pagament=payment_data
+    
+    def pagament(self, viaje:Viaje):
         preu = viaje.precio
         self.dades_pagament = payment_data
         if (Bank.do_payment(self,self.dades_pagament)):
