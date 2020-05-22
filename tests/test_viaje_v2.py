@@ -10,16 +10,12 @@ usr = User("Jesus Gil y Gil", "75245896W", "654879524",
 
 class test_viaje_v2(unittest.TestCase):
     
-    def test_confirmaPagamentDestinacio(self):
-        viaje1 = Viaje(usr, 1)
-        viaje2 = Viaje(usr, 5)
-        viajes = [viaje1, viaje2]
-        test_res = [True, True]
-        payData = PaymentData('VISA', 'Jesus Gil y Gil', '9999999999999999', '433')
-        for viaje in viajes:
-            viaje.addDestino(Flights(87465, "Martorell", 200))
-            viaje.user.seleccioMetodePagament(payData)
-        for i, viaje in enumerate(viajes):
-            self.assertEqual(viaje.reservarYpagar(), test_res[i])
+        def test_pagoEsperado(self):
+        viaje1 = Viaje(usr, 2)
+        metode_pagament = PaymentData("Mastercard","Jesus Gil Padre",123456,4242)
+        viaje1.addDestino(Flights(1234,"Sant Esteve de les Roures",100))
+        viaje1.addDestino(Flights(4737,"Talavera de la Reina",50))
+        viaje1.user.seleccioMetodePagament(metode_pagament)
+        self.assertEqual(metode_pagament,viaje1.user.dades_pagament)
 
             
