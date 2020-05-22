@@ -8,10 +8,13 @@ class Flights:
         self.destinacio = destinacio
         self.preu = preu
 
+    def dataVolOK(self):
+        return type(self.codi_vol) == str and type(self.destinacio) == str and type(self.preu) == int
+    
     def reserva_vol(self, user):
         skyscanner = Skyscanner()
         
-        if skyscanner.confirm_reserve(user, self):
+        if self.dataVolOK() and skyscanner.confirm_reserve(user, self):
             return True
         else:
             return False

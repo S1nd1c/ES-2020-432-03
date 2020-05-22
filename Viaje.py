@@ -100,6 +100,7 @@ class Viaje:
         if not self.lista_vuelos:
             return 0
         for vuelo in self.lista_vuelos:
+            if vuelo.dataVolOK():
             sksc = Skyscanner()
             sksc.confirm_reserve(self.user, vuelo)
         return True

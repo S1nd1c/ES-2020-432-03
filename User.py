@@ -21,7 +21,7 @@ class User:
     def pagament(self, viaje:Viaje):
         preu = viaje.precio
         banco = Bank()
-        if self.validateInput() == True and self.dades_pagament.validateData() == True:
+        if self.validateInput() and self.dades_pagament.validateData():
             return banco.do_payment(self,self.dades_pagament)
         else:
             return False
