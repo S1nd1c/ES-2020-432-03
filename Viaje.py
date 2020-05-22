@@ -34,9 +34,9 @@ class Viaje:
         final_price = 0
 
         for coche in self.lista_coches:
-            final_price += (coche.preu * (coche.preu % self.num_viajeros) * coche.dias_estancia)
+            final_price += (coche.preu * coche.dias_estancia)
         
-        return final_price
+        return final_price * ((self.num_viajeros // 4) + 1)
 
     def calculaPrecioHoteles(self):
         if not self.lista_hoteles:
@@ -78,7 +78,15 @@ class Viaje:
     def añadirHoteles(self, lista_hoteles):
         self.lista_hoteles = lista_hoteles
 
-    def añadirCoches(self, lista_coches):
+    def añadirCoche(self, coche: Cars):
+        if coche not in self.lista_coches:
+            self.lista_coches.append(coche)
+
+     def quitarCoche(self, del_coche: Cars):
+        lista_coches = []
+        for coche in self.lista_coches:
+            if coche != del_coche
+            lista_coches.append(coche)
         self.lista_coches = lista_coches
 
     def confirmaReserva_vehicle(self):
