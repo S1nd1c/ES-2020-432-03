@@ -8,6 +8,8 @@ usr = User("Jesus Gil y Gil", "75245896W", "654879524",
            "Calle Alamo 23, Marbella", "jgil@gmail.com")
 
 
+class test_viaje_v2(unittest.TestCase):
+    
     def test_confirmaPagamentDestinacio(self):
         viaje1 = Viaje(usr, 1)
         viaje2 = Viaje(usr, 5)
@@ -19,3 +21,5 @@ usr = User("Jesus Gil y Gil", "75245896W", "654879524",
             viaje.user.seleccioMetodePagament(payData)
         for i, viaje in enumerate(viajes):
             self.assertEqual(viaje.reservarYpagar(), test_res[i])
+
+            
