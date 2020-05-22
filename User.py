@@ -10,7 +10,7 @@ class User:
         self.telefon = telefon
         self.direccio = direccio
         self.email = email
-        
+
 
     def validateInput(self):
         return type(self.nom) == str and type(self.dni) == str and type(self.telefon) == str and type(self.direccio) == str and type(self.email) == str
@@ -20,11 +20,9 @@ class User:
     
     def pagament(self, viaje:Viaje):
         preu = viaje.precio
-        if (Bank.do_payment(self,self.dades_pagament)):
-            return True
-        else:
-            print("Error: Pagament no realitzat correctament")
-            return False
+        banco = Bank()
+        return banco.do_payment(self,self.dades_pagament)
+        
 
         
         

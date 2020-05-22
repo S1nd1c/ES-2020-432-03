@@ -5,4 +5,5 @@ class Bank:
         pass
 
     def do_payment(self, user, payment_data):
+        print("Llegamos\n")
         return True

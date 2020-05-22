@@ -133,4 +133,8 @@ class Viaje:
         self.confirmaReserva_vehicle()
         self.confirmaReserva_vol()
         self.precio = self.sumaPrecios()
-        self.user.pagament(self)
+        if (self.user.pagament(self)):
+            return True
+        else:
+            print("Error: Pagament no realitzat correctament")
+            return False
