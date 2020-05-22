@@ -83,11 +83,11 @@ class Viaje:
             self.lista_coches.append(coche)
 
     def quitarCoche(self, del_coche: Cars):
-    lista_coches = []
-    for coche in self.lista_coches:
-        if coche != del_coche
-        lista_coches.append(coche)
-    self.lista_coches = lista_coches
+        lista_coches = []
+        for coche in self.lista_coches:
+            if coche != del_coche:
+                lista_coches.append(coche)
+        self.lista_coches = lista_coches
 
     def confirmaReserva_vehicle(self):
         if not self.lista_coches:
