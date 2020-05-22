@@ -30,7 +30,7 @@ error al realizar el pago, se reporta que la acción no se ha podido realizar
 - [X] Dado un viaje con múltiples destinos y más de un viajero, cuando se produce
 error al confirmar los vuelos, se reporta que la acción no se ha podido realizar
 ## Versión 3
-- [ ] Dado un viaje con más de un viajero, cuando se añaden vehículos, el precio del
+- [X] Dado un viaje con más de un viajero, cuando se añaden vehículos, el precio del
 viaje es el esperado
 - [ ] Dado un viaje con más de un viajero, cuando se quitan vehículos, el precio del
 viaje es el esperado
