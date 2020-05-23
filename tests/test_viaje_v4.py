@@ -1,4 +1,5 @@
 import unittest
+from unittest import mock
 import pytest
 from src.Viaje import *
 from src.User import User
@@ -6,8 +7,6 @@ from src.Flights import Flights
 from src.PaymentData import PaymentData
 
 usr = User("Jesus Gil y Gil", "75245896W", "654879524",
-           "Calle Alamo 23, Marbella", "jgil@gmail.com")
-           usr = User("Jesus Gil y Gil", "75245896W", "654879524",
            "Calle Alamo 23, Marbella", "jgil@gmail.com")
 car_1 = Cars("1234ABC", "Suv", "BMW", "Calle Falsa 123", "Aeropuerto", 7, 150)
 car_2 = Cars("5089PFE", "Deportivo", "Audi",
@@ -24,10 +23,26 @@ vuelo_1 = Flights("15612F", "MADRID", 55)
 vuelo_2 = Flights("68745A", "ESTAMBUL", 90)
 vuelo_3 = Flights("86452T", "LONDRES", 85)
 
+metode_pagament = PaymentData("Mastercard","Jesus Gil Padre",123456,4242)
+
 
 
 class test_viaje_v4(unittest.TestCase):
 
-    def test_volverRealizarPago(self):
-        pass
-        
+    @mock.patch('src.Bank')
+    def test_volverRealizarPago(self, mock_bank):
+        num_passatgers = 3
+
+        viaje = Viaje(usr, num_passatgers)
+
+        viaje.addDestino(vuelo_1)
+        viaje.addDestino(vuelo_2)
+        viaje.user.seleccioMetodePagament(metode_pagament)
+
+        mock_bank.do_payment.return_value = False
+        self.assertTrue(viaje.reservarYpagar())
+
+        #viaje.reservarYpagar().return_value = False
+
+
+    
