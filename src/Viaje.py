@@ -1,3 +1,4 @@
+import warnings
 from src.Hotels import Hotels
 from src.Flights import Flights
 from src.Cars import Cars
@@ -5,8 +6,9 @@ from src.Skyscanner import Skyscanner
 from src.Booking import Booking
 from src.Rentalcars import Rentalcars
 from src.Bank import Bank
-class Viaje:
 
+
+class Viaje:
 
     def __init__(self, user, num_viajeros):
         self.user = user
@@ -15,7 +17,7 @@ class Viaje:
         self.lista_vuelos = []
         self.lista_hoteles = []
         self.lista_destinos = []
-
+        self.intents_pagament = 0
 
     def calculaPrecioVuelos(self):
         if not self.lista_vuelos:
@@ -26,16 +28,16 @@ class Viaje:
         for vuelo in self.lista_vuelos:
             final_price += vuelo.preu * self.num_viajeros
         return final_price
-        
+
     def calculaPrecioCoche(self):
         if not self.lista_coches:
             return 0
-        
+
         final_price = 0
 
         for coche in self.lista_coches:
             final_price += (coche.preu * coche.dias_estancia)
-        
+
         return final_price * ((self.num_viajeros // 4) + 1)
 
     def calculaPrecioHoteles(self):
@@ -56,11 +58,11 @@ class Viaje:
 
         return precio_coches + precio_hoteles + precio_vuelos
 
-    def addDestino(self, vuelo:Flights):
+    def addDestino(self, vuelo: Flights):
         if vuelo not in self.lista_vuelos:
             self.lista_vuelos.append(vuelo)
             self.lista_destinos.append(vuelo.destinacio)
-    
+
     def rmDestino(self, codi_vol, destinacio, preu):
         nuevos_destinos = []
         nuevos_vuelos = []
@@ -71,7 +73,7 @@ class Viaje:
         self.lista_destinos = nuevos_destinos
         self.lista_vuelos = nuevos_vuelos
 
-    def añadirHotel(self, hotel:Hotels):
+    def añadirHotel(self, hotel: Hotels):
         if hotel not in self.lista_hoteles:
             self.lista_hoteles.append(hotel)
 
@@ -103,7 +105,7 @@ class Viaje:
             cars.confirm_reserve(self.user, coche)
         return True
 
-    def cancelaReserva_vehicle(self): # OJO PIOJO A ESTA FUNCION
+    def cancelaReserva_vehicle(self):  # OJO PIOJO A ESTA FUNCION
         for coche in self.lista_coches:
             cars = Cars()
             if cars.reserva_coche(self.user, coche) != True:
@@ -111,7 +113,7 @@ class Viaje:
             else:
                 return False
 
-    def confirmaReserva_vol(self): 
+    def confirmaReserva_vol(self):
         if not self.lista_vuelos:
             return 0
         for vuelo in self.lista_vuelos:
@@ -121,7 +123,7 @@ class Viaje:
             sksc.confirm_reserve(self.user, vuelo)
         return True
 
-    def cancelaReserva_vol(self): # OJO PIOJO A ESTA FUNCION
+    def cancelaReserva_vol(self):  # OJO PIOJO A ESTA FUNCION
         for vuelo in self.lista_vuelos:
             sksc = Flights()
             if sksc.reserva_vol(self.user, vuelo) != True:
@@ -138,8 +140,8 @@ class Viaje:
             hotels = Booking()
             hotels.confirm_reserve(self.user, hotel)
         return True
-    
-    def cancelaReserva_hotel(self): # OJO PIOJO A ESTA FUNCION
+
+    def cancelaReserva_hotel(self):  # OJO PIOJO A ESTA FUNCION
         for hotel in self.lista_hoteles:
             hotels = Booking()
             if hotels.reserva_hotel(self.user, hotel) != True:
@@ -152,7 +154,12 @@ class Viaje:
         self.confirmaReserva_vehicle()
         self.confirmaReserva_vol()
         self.precio = self.sumaPrecios()
-        if self.user.pagament(self.precio):
-            return True
-        else:
-            raise ValueError("Error: Pagament no realitzat correctament")
+        self.intents_pagament += 1
+
+        if self.intents_pagament < 3:
+            try:
+                return self.user.pagament(self.precio)
+            except:
+                warnings.warn(
+                    'Error: Pagament no realitzat correctament. Reintentant...')
+                return False

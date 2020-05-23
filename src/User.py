@@ -23,7 +23,7 @@ class User:
         if self.validateInput() and self.dades_pagament.validateData():
             return banco.do_payment(self,self.dades_pagament)
         else:
-            return False
+            raise ValueError('Error en procesar el pagament')
         
 
         
