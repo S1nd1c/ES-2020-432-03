@@ -40,23 +40,9 @@ class test_viaje_v4(unittest.TestCase):
         viaje.user.seleccioMetodePagament(metode_pagament)
 
         mock_bank.do_payment.return_value = False
-        res = viaje.reservarYpagar()
+        self.assertTrue(viaje.reservarYpagar())
 
-        if not res:
-            mock_bank.do_payment.return_value = True
-            self.assertTrue(viaje.reservarYpagar())
+        #viaje.reservarYpagar().return_value = False
 
-    @mock.patch('src.Bank')
-    def test_agotaIntentosPago(self, mock_bank):
-        num_passatgers = 3
 
-        viaje = Viaje(usr, num_passatgers)
-
-        viaje.addDestino(vuelo_1)
-        viaje.addDestino(vuelo_2)
-        viaje.user.seleccioMetodePagament(metode_pagament)
-
-        mock_bank.do_payment.return_value = False
-        self.assertFalse(viaje.reservarYpagar())
-
-        
+    
