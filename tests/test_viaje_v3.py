@@ -86,10 +86,8 @@ class test_viatje_v3(unittest.TestCase):
         viaje.addDestino(vuelo_3)
 
         self.assertEqual(viaje.reservarYpagar(), True)
-<<<<<<< HEAD
-=======
 
-    def test_ErrorReservaVehiculos:
+    def test_ErrorReservaVehiculos(self):
         viaje1 = Viaje(usr, 3)
         viaje1.addDestino(vuelo_2)
         viaje1.addDestino(vuelo_1)
@@ -113,4 +111,3 @@ class test_viatje_v3(unittest.TestCase):
             viaje1.añadirHotel(hotel_2)
             viaje1.añadirHotel(Hotels("2","Talavera de la Reina","C/ Lope de Vega 27",60,1,1))
             viaje1.confirmaReserva_hotel()
->>>>>>> ee1b06e321a27a1ca126d61b375e9f65aacfc278
