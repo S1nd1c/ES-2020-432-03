@@ -1,5 +1,5 @@
 import unittest
-from User import User
+from src.User import User
 
 user1 = User("Jesus Gil y Gil", "75245896W", "654879524", "Calle Alamo 23, Marbella", "jgil@gmail.com")
 user2 = User("Jesus Gil y Gil", "75245896W", 654879524, "Calle Alamo 23, Marbella", "jgil@gmail.com")

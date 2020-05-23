@@ -1,7 +1,7 @@
 import unittest
-from Viaje import Viaje
-from Cars import Cars
-from User import User
+from src.Viaje import Viaje
+from src.Cars import Cars
+from src.User import User
 
 usr = User("Jesus Gil y Gil", "75245896W", "654879524",
            "Calle Alamo 23, Marbella", "jgil@gmail.com")

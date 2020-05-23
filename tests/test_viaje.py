@@ -1,8 +1,8 @@
 import unittest
-from Viaje import *
-from User import User
-from Flights import Flights
-from PaymentData import PaymentData
+from src.Viaje import *
+from src.User import User
+from src.Flights import Flights
+from src.PaymentData import PaymentData
 
 usr = User("Jesus Gil y Gil", "75245896W", "654879524",
            "Calle Alamo 23, Marbella", "jgil@gmail.com")
