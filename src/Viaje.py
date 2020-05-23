@@ -71,12 +71,13 @@ class Viaje:
         self.lista_destinos = nuevos_destinos
         self.lista_vuelos = nuevos_vuelos
 
-    def añadirVuelos(self, vuelo:Flights):
+    def añadirVuelo(self, vuelo:Flights):
         if vuelo not in self.lista_vuelos:
             self.lista_vuelos.append(vuelo)
 
-    def añadirHoteles(self, lista_hoteles):
-        self.lista_hoteles = lista_hoteles
+    def añadirHotele(self, hotel:Hotels):
+        if hotel not in self.lista_hoteles:
+            self.lista_hoteles.append(hotel)
 
     def añadirCoche(self, coche: Cars):
         if coche not in self.lista_coches:
