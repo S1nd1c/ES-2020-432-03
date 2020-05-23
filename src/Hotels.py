@@ -10,6 +10,8 @@ class Hotels:
         self.dies_estada = dies_estada
         self.num_habs = num_habs
 
+    def dataHotelOK(self):
+        return type(self.id_hotel) == int and type(self.ciutat) == str and type(self.direccio) == str and type(self.preu) == int and type(self.dies_estada) == int and type(self.num_habs) == int
 
     def reserva_hotel(self, user):
         booking = Booking.Booking() 

@@ -71,11 +71,7 @@ class Viaje:
         self.lista_destinos = nuevos_destinos
         self.lista_vuelos = nuevos_vuelos
 
-    def añadirVuelo(self, vuelo:Flights):
-        if vuelo not in self.lista_vuelos:
-            self.lista_vuelos.append(vuelo)
-
-    def añadirHotele(self, hotel:Hotels):
+    def añadirHotel(self, hotel:Hotels):
         if hotel not in self.lista_hoteles:
             self.lista_hoteles.append(hotel)
 
@@ -128,6 +124,8 @@ class Viaje:
         if not self.lista_hoteles:
             return 0
         for hotel in self.lista_hoteles:
+            if hotel.dataHotelOK() == False:
+                raise ValueError("Error: La reserva de hotels ha fallat")
             hotels = Booking()
             hotels.confirm_reserve(self.user, hotel)
         return True
@@ -145,7 +143,7 @@ class Viaje:
         self.confirmaReserva_vehicle()
         self.confirmaReserva_vol()
         self.precio = self.sumaPrecios()
-        if self.user.pagament(self):
+        if self.user.pagament(self.precio):
             return True
         else:
             raise ValueError("Error: Pagament no realitzat correctament")

@@ -21,3 +21,29 @@ class test_viatje_v3(unittest.TestCase):
     
     def test_sumaPrecioQuitarCoche(self):
         self.assertEqual(1,1)
+
+
+    def test_ErrorReservaVehiculos:
+        viaje1 = Viaje(usr, 3)
+        viaje1.addDestino(vuelo_2)
+        viaje1.addDestino(vuelo_1)
+        viaje1.añadirCoche(car_1)
+        viaje1.añadirCoche(Ca)
+        self.assertEqual(viaje1.confirmaReserva_vehicle(),False)
+
+    def test_confirmaReservaHotelsOk(self):
+        viaje1 = Viaje(usr, 2)
+        viaje1.addDestino(vuelo_2)
+        viaje1.addDestino(vuelo_1)
+        viaje1.añadirHotel(hotel_2)
+        viaje1.añadirHotel(hotel_3)
+        self.assertEqual(viaje1.confirmaReserva_hotel(),True)
+
+    def test_confirmaReservaHotelsError(self):
+        with pytest.raises(ValueError):
+            viaje1 = Viaje(usr, 2)
+            viaje1.addDestino(vuelo_2)
+            viaje1.addDestino(vuelo_1)
+            viaje1.añadirHotel(hotel_2)
+            viaje1.añadirHotel(Hotels("2","Talavera de la Reina","C/ Lope de Vega 27",60,1,1))
+            viaje1.confirmaReserva_hotel()
