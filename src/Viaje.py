@@ -45,7 +45,7 @@ class Viaje:
         final_price = 0
 
         for hotel in self.lista_hoteles:
-            final_price += (hotel.preu * hotel.num_habs * hotel.dies_estada)
+            final_price += (hotel.preu * self.num_viajeros * hotel.dies_estada)
 
         return final_price
 
