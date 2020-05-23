@@ -51,21 +51,21 @@ error al confirmar los alojamientos, se reporta que la acción no se ha podido
 realizar
 ## Versión 4
 - [ ] Dado un viaje con múltiples destinos y más de un viajero, cuando se produce un
-error al realizar el pago, se reintenta realizar el pago
+error al realizar el pago, se reintenta realizar el pago- Iker
 - [ ] Dado un viaje con múltiples destinos y más de un viajero, cuando el pago se
 realiza correctamente en un reintento, se reporta que la acción se ha realizado
-correctamente
+correctamente - Polete
 - [ ] Dado un viaje con múltiples destinos y más de un viajero, cuando se produce un
 error al realizar el pago, y se ha superado el número máximo de reintentos, se
-reporta que la acción no se ha podido realizar
+reporta que la acción no se ha podido realizar -Nil
 - [ ] Dado un viaje con múltiples destinos y más de un viajero, cuando se produce un
-error al confirmar los vuelos, se reintenta realizar la confirmación
+error al confirmar los vuelos, se reintenta realizar la confirmación - Bermudez
 - [ ] Dado un viaje con múltiples destinos y más de un viajero, cuando la
 confirmación de los vuelos se realiza correctamente en un reintento, se reporta
-que la acción se ha realizado correctamente
+que la acción se ha realizado correctamente -Elià
 - [ ] Dado un viaje con múltiples destinos y más de un viajero, cuando se produce un
 error al confirmar los vuelos, y se ha superado el número máximo de reintentos,
-se reporta que la acción no se ha podido realizar
+se reporta que la acción no se ha podido realizar - @everyone
 ## Versión 5
 - [ ] Dado un viaje con múltiples destinos y más de un viajero, cuando los datos de
 facturación introducidos por el usuario son correctos, se reporta que los datos
