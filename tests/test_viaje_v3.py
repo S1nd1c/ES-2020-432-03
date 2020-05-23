@@ -76,7 +76,7 @@ class test_viatje_v3(unittest.TestCase):
 
         self.assertEqual(viaje.reservarYpagar(), True)
 
-    def test_ErrorReservaVehiculos:
+    def test_ErrorReservaVehiculos(self):
         viaje1 = Viaje(usr, 3)
         viaje1.addDestino(vuelo_2)
         viaje1.addDestino(vuelo_1)
