@@ -85,19 +85,20 @@ class test_viatje_v3(unittest.TestCase):
         self.assertEqual(viaje.reservarYpagar(), True)
 
     def test_ErrorReservaVehiculos(self):
-        viaje1 = Viaje(usr, 3)
-        viaje1.addDestino(vuelo_2)
-        viaje1.addDestino(vuelo_1)
-        viaje1.añadirCoche(car_1)
-        viaje1.añadirCoche(Ca)
-        self.assertEqual(viaje1.confirmaReserva_vehicle(),False)
+        with pytest.raises(ValueError):
+            viaje1 = Viaje(usr, 3)
+            viaje1.addDestino(vuelo_2)
+            viaje1.addDestino(vuelo_1)
+            viaje1.añadirCoche(car_1)
+            viaje1.añadirCoche(Cars("1234ABC", "Suv", "BMW","Calle Falsa 123", "Aeropuerto", 7, 150))
+            viaje1.confirmaReserva_vehicle()
 
     def test_confirmaReservaHotelsOk(self):
         viaje1 = Viaje(usr, 2)
         viaje1.addDestino(vuelo_2)
         viaje1.addDestino(vuelo_1)
+        viaje1.añadirHotel(hotel_1)
         viaje1.añadirHotel(hotel_2)
-        viaje1.añadirHotel(hotel_3)
         self.assertEqual(viaje1.confirmaReserva_hotel(),True)
 
     def test_confirmaReservaHotelsError(self):

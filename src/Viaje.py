@@ -97,6 +97,8 @@ class Viaje:
         if not self.lista_coches:
             return 0
         for coche in self.lista_coches:
+            if coche.validateDataCar() == False:
+                raise ValueError("Error: La reserva de cotxes ha fallat")
             cars = Rentalcars()
             cars.confirm_reserve(self.user, coche)
         return True

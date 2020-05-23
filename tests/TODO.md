@@ -41,12 +41,12 @@ del viaje es el esperado
 - [X] Dado un viaje con múltiples destinos y más de un viajero, cuando se confirma
 correctamente la reserva de los vehículos, se reporta que la acción se ha
 realizado correctamente
-- [ ] Dado un viaje con múltiples destinos y más de un viajero, cuando se produce
+- [X] Dado un viaje con múltiples destinos y más de un viajero, cuando se produce
 error al confirmar los vehículos, se reporta que la acción no se ha podido realizar
-- [ ] Dado un viaje con múltiples destinos y más de un viajero, cuando se confirma
+- [X] Dado un viaje con múltiples destinos y más de un viajero, cuando se confirma
 correctamente la reserva de los alojamientos, se reporta que la acción se ha
 realizado correctamente
-- [ ] Dado un viaje con múltiples destinos y más de un viajero, cuando se produce
+- [X] Dado un viaje con múltiples destinos y más de un viajero, cuando se produce
 error al confirmar los alojamientos, se reporta que la acción no se ha podido
 realizar
 ## Versión 4
