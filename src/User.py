@@ -17,7 +17,8 @@ class User:
     def seleccioMetodePagament(self,payment_data:PaymentData):
         self.dades_pagament=payment_data
     
-    def pagament(self):
+    def pagament(self, precio):
+        self.dades_pagament.añadirImporte(precio)
         banco = Bank()
         if self.validateInput() and self.dades_pagament.validateData():
             return banco.do_payment(self,self.dades_pagament)
