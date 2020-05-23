@@ -5,19 +5,15 @@ from src.Cars import Cars
 from src.User import User
 from src.Flights import Flights
 from src.Hotels import Hotels
+from src.PaymentData import PaymentData
 
-usr = User("Jesus Gil y Gil", "75245896W", "654879524",
-           "Calle Alamo 23, Marbella", "jgil@gmail.com")
+usr = User("Jesus Gil y Gil", "75245896W", "654879524","Calle Alamo 23, Marbella", "jgil@gmail.com")
 car_1 = Cars("1234ABC", "Suv", "BMW", "Calle Falsa 123", "Aeropuerto", 7, 150)
-car_2 = Cars("5089PFE", "Deportivo", "Audi",
-             "Plaza del Pueblo", "Aeropuerto", 4, 70)
-car_3 = Cars("6205MOA", "Familiar", "Renault",
-             "Calle Karl Marx", "Aeropuerto", 2, 25)
+car_2 = Cars("5089PFE", "Deportivo", "Audi","Plaza del Pueblo", "Aeropuerto", 4, 70)
+car_3 = Cars("6205MOA", "Familiar", "Renault","Calle Karl Marx", "Aeropuerto", 2, 25)
 
-hotel_1 = Hotels(1, "Jerez de la Frontera",
-                 "Morenos, 10, 11402 Jerez de la Frontera, España", 26, 7, 1)
-hotel_2 = Hotels(2, "Talavera de la Reina",
-                 "Roma, 1, 45600 Talavera de la Reina, España", 62, 7, 1)
+hotel_1 = Hotels(1, "Jerez de la Frontera","Morenos, 10, 11402 Jerez de la Frontera, España", 26, 7, 1)
+hotel_2 = Hotels(2, "Talavera de la Reina","Roma, 1, 45600 Talavera de la Reina, España", 62, 7, 1)
 
 vuelo_1 = Flights("15612F", "MADRID", 55)
 vuelo_2 = Flights("68745A", "ESTAMBUL", 90)
@@ -65,17 +61,13 @@ class test_viatje_v3(unittest.TestCase):
 
         self.assertEqual(viaje.calculaPrecioHoteles(), 546)
 
-    def test_confirmacionReservaVehiculos(self):
-
-        num_passatgers = 3
-
-        viaje = Viaje(usr, num_passatgers)
-
+    def test_confirmacionReservaVehiculosOk(self):
+        viaje = Viaje(usr, 3)
         viaje.addDestino(vuelo_1)
         viaje.addDestino(vuelo_2)
-        viaje.addDestino(vuelo_3)
-
-        self.assertEqual(viaje.reservarYpagar(), True)
+        viaje.añadirCoche(car_1)
+        viaje.añadirCoche(car_2)
+        self.assertEqual(viaje.confirmaReserva_vehicle(), True)
 
     def test_ErrorReservaVehiculos(self):
         with pytest.raises(ValueError):
@@ -83,7 +75,7 @@ class test_viatje_v3(unittest.TestCase):
             viaje1.addDestino(vuelo_2)
             viaje1.addDestino(vuelo_1)
             viaje1.añadirCoche(car_1)
-            viaje1.añadirCoche(Cars("1234ABC", "Suv", "BMW","Calle Falsa 123", "Aeropuerto", 7, 150))
+            viaje1.añadirCoche(Cars(123, "Suv", "BMW","Calle Falsa 123", "Aeropuerto", 7, 150))
             viaje1.confirmaReserva_vehicle()
 
     def test_confirmaReservaHotelsOk(self):

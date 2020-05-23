@@ -46,7 +46,7 @@ class test_viaje(unittest.TestCase):
         aux = []
         for i in range(len(viajes)):
             aux.append(viajes[i].sumaPrecios())
-            viajes[i].addDestino(Flights(44343, "Mostoles", 200))
+            viajes[i].addDestino(Flights("44343", "Mostoles", 200))
             aux.append(viajes[i].sumaPrecios())
         self.assertEqual(precios, aux)
 
@@ -84,8 +84,8 @@ class test_viaje(unittest.TestCase):
     
     def test_destinos_ok(self):
         viaje1 = Viaje(usr, 2)
-        dest1 = Flights(1234,"Sant Esteve de les Roures",100)
-        dest2 = Flights(4737,"Talavera de la Reina",50)
+        dest1 = Flights("1234","Sant Esteve de les Roures",100)
+        dest2 = Flights("4737","Talavera de la Reina",50)
         dests = [dest1,dest2]
         ok = ["Sant Esteve de les Roures","Talavera de la Reina"]
         self.assertEqual(len(viaje1.lista_destinos),0)
@@ -96,8 +96,8 @@ class test_viaje(unittest.TestCase):
 
     def test_vuelos_ok(self):
         viaje1 = Viaje(usr, 2)
-        dest1 = Flights(8452,"Villa Puri",100)
-        dest2 = Flights(5745,"Guarroman",50)
+        dest1 = Flights("84522","Villa Puri",100)
+        dest2 = Flights("5745","Guarroman",50)
         dests = [dest1,dest2]
         ok = [dest1, dest2]
         self.assertEqual(len(viaje1.lista_vuelos),0)
@@ -114,41 +114,41 @@ class test_viaje(unittest.TestCase):
         aux = []
         for i in range(len(viajes)):
             aux.append(viajes[i].sumaPrecios())
-            viajes[i].addDestino(Flights(87465, "Martorell", 200))
+            viajes[i].addDestino(Flights("87465", "Martorell", 200))
             aux.append(viajes[i].sumaPrecios())
         self.assertEqual(precios, aux)
 
     def test_rmDestino(self):
         viaje1 = Viaje(usr, 2)
         viaje2 = Viaje(usr, 4)
-        vuelos = [Flights(58555,"España",75),Flights(12345,"Italia",60)]
+        vuelos = [Flights("58555","España",75),Flights("12345","Italia",60)]
         for i in range(len(vuelos)):
             viaje1.addDestino(vuelos[i])
             viaje2.addDestino(vuelos[i]) 
         viajes = [viaje1,viaje2]
         destinos = ["España","Italia"]
         for destino in range(len(viajes)):
-            viajes[destino].rmDestino(58555,"España",75)
+            viajes[destino].rmDestino("58555","España",75)
             for i in range(len(viajes[destino].lista_destinos)):
                 self.assertEqual(viajes[destino].lista_destinos[i],destinos[-1])
 
     def test_rmDestinoVuelo(self):
         viaje1 = Viaje(usr, 2)
         viaje2 = Viaje(usr, 4)
-        vuelos = [Flights(58555,"España",75),Flights(12345,"Italia",60)]
+        vuelos = [Flights("58555","España",75),Flights("12345","Italia",60)]
         for i in range(len(vuelos)):
             viaje1.addDestino(vuelos[i])
             viaje2.addDestino(vuelos[i]) 
         viajes = [viaje1,viaje2]
         for destino in range(len(viajes)):
-            viajes[destino].rmDestino(58555,"España",75)
+            viajes[destino].rmDestino("58555","España",75)
             for i in range(len(viajes[destino].lista_vuelos)):
                 self.assertEqual(viajes[destino].lista_vuelos[i],vuelos[-1])
 
     def test_rmDestinoPrecio(self):
         viaje1 = Viaje(usr, 2)
         viaje2 = Viaje(usr, 4)
-        vuelos = [Flights(58555,"España",100),Flights(12345,"Italia",200)]
+        vuelos = [Flights("58555","España",100),Flights("12345","Italia",200)]
         soladd = [0,0,200,400]
         solT = [600, 400, 1200, 800]
         aux = []
@@ -162,7 +162,7 @@ class test_viaje(unittest.TestCase):
         aux = []
         for destino in range(len(viajes)):
             aux.append(viajes[destino].sumaPrecios())
-            viajes[destino].rmDestino(58555,"España",100)
+            viajes[destino].rmDestino("58555","España",100)
             aux.append(viajes[destino].sumaPrecios())
 
         self.assertEqual(solT, aux)
@@ -174,7 +174,7 @@ class test_viaje(unittest.TestCase):
         test_res = [True, True]
         payData = PaymentData('VISA', 'Jesus Gil y Gil', '9999999999999999', '433')
         for viaje in viajes:
-            viaje.addDestino(Flights(87465, "Martorell", 200))
+            viaje.addDestino(Flights("87465", "Martorell", 200))
             viaje.user.seleccioMetodePagament(payData)
         for i, viaje in enumerate(viajes):
             self.assertEqual(viaje.reservarYpagar(), test_res[i])
