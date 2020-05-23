@@ -10,5 +10,6 @@ class PaymentData:
     def añadirImporte(self,precio):
         self.precio = precio
     
+
     def validateData(self):
         return type(self.nom) == str and type(self.tipus_targeta) == str and type(self.numero) == str and type(self.codi) == str 

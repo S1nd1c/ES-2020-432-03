@@ -1,5 +1,5 @@
-from Rentalcars import Rentalcars
-import User
+from src.Rentalcars import Rentalcars
+from src.User import User
 
 class Cars:
 
@@ -16,8 +16,7 @@ class Cars:
         return type(self.id_cotxe) == str and type(self.tipus) == str and type(self.marca) == str type(self.ubi_recollida) == str and type(self.ubi_devolucio) == str and type(self.dias_estancia) == int and type(self.preu) == int
     
     def reserva_coche(self, user:User):
-        rentalcar = Rentalcars.Rentalcars()
-        
+        rentalcar = Rentalcars()        
         if rentalcar.confirm_reserve(user, self):
             return True
         else:

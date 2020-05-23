@@ -1,4 +1,4 @@
-from Skyscanner import Skyscanner
+from src.Skyscanner import Skyscanner
 
 
 class Flights:

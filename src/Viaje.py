@@ -1,10 +1,10 @@
-from Hotels import Hotels
-from Flights import Flights
-from Cars import Cars
-from Skyscanner import Skyscanner
-from Booking import Booking
-from Rentalcars import Rentalcars
-from Bank import Bank
+from src.Hotels import Hotels
+from src.Flights import Flights
+from src.Cars import Cars
+from src.Skyscanner import Skyscanner
+from src.Booking import Booking
+from src.Rentalcars import Rentalcars
+from src.Bank import Bank
 class Viaje:
 
 
@@ -85,6 +85,13 @@ class Viaje:
             if coche != del_coche:
                 lista_coches.append(coche)
         self.lista_coches = lista_coches
+
+    def quitarHotel(self, del_hotel: Hotels):
+        lista_hoteles = []
+        for hotel in self.lista_hoteles:
+            if hotel != del_hotel:
+                lista_hoteles.append(hotel)
+        self.lista_hoteles = lista_hoteles
 
     def confirmaReserva_vehicle(self):
         if not self.lista_coches:

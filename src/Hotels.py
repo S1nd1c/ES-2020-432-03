@@ -1,4 +1,4 @@
-import Booking
+import src.Booking
 
 class Hotels:
 
