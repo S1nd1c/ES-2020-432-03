@@ -15,7 +15,7 @@ class Viaje:
         self.lista_vuelos = []
         self.lista_hoteles = []
         self.lista_destinos = []
-
+        self.intents_pagament = 0
 
     def calculaPrecioVuelos(self):
         if not self.lista_vuelos:
@@ -152,7 +152,8 @@ class Viaje:
         self.confirmaReserva_vehicle()
         self.confirmaReserva_vol()
         self.precio = self.sumaPrecios()
-        if self.user.pagament(self.precio):
-            return True
-        else:
-            raise ValueError("Error: Pagament no realitzat correctament")
+        while self.intents_pagament < 3:
+            if self.user.pagament(self.precio):
+                return True
+            self.intents_pagament +=1
+        

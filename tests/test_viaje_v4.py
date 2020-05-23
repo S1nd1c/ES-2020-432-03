@@ -23,24 +23,22 @@ vuelo_1 = Flights("15612F", "MADRID", 55)
 vuelo_2 = Flights("68745A", "ESTAMBUL", 90)
 vuelo_3 = Flights("86452T", "LONDRES", 85)
 
-metode_pagament = PaymentData("Mastercard","Jesus Gil Padre",123456,4242)
+metode_pagament = PaymentData("Mastercard","Jesus Gil Padre","123456","4242")
 
 
 
 class test_viaje_v4(unittest.TestCase):
 
-    @mock.patch('src.Bank')
-    def test_volverRealizarPago(self, mock_bank):
+    @mock.patch('src.Bank.do_payment',return_value=False)
+    def test_volverRealizarPago(self, mock_Bank):
         num_passatgers = 3
-
         viaje = Viaje(usr, num_passatgers)
-
         viaje.addDestino(vuelo_1)
         viaje.addDestino(vuelo_2)
         viaje.user.seleccioMetodePagament(metode_pagament)
-
-        mock_bank.do_payment.return_value = False
-        self.assertTrue(viaje.reservarYpagar())
+        mock_Bank.do_payment.return_value = False
+        self.assertTrue(mock_Bank.reservarYpagar())
+        
 
         #viaje.reservarYpagar().return_value = False
 
