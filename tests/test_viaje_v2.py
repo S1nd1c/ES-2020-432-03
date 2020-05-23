@@ -22,7 +22,7 @@ class test_viaje_v2(unittest.TestCase):
         with pytest.raises(ValueError):
             viaje1 = Viaje(usr, 2)
             viaje1.addDestino(Flights("1234","Sant Esteve de les Roures",100))
-            viaje1.addDestino(Flights("4737","Talavera de la Reina",50))
+            viaje1.addDestino(Flights(4737,"Talavera de la Reina",50))
             viaje1.user.seleccioMetodePagament(metode_pagament)
             viaje1.reservarYpagar()
     
