@@ -24,7 +24,6 @@ class test_viatje_v3(unittest.TestCase):
 
 
     def test_sumaPrecioQuitarCoche(self):
-<<<<<<< HEAD
         num_passatgers = 3
         car_1 = Cars("1234ABC", "Suv", "BMW",
                      "Calle Falsa 123", "Aeropuerto", 7, 150)
@@ -33,9 +32,7 @@ class test_viatje_v3(unittest.TestCase):
         car_3 = Cars("6205MOA", "Familiar", "Renault",
                      "Calle Karl Marx", "Aeropuerto", 2, 25)
         viaje = Viaje(usr, num_passatgers)
-=======
-        viaje = Viaje(usr, 3)
->>>>>>> ee1b06e321a27a1ca126d61b375e9f65aacfc278
+
         viaje.añadirCoche(car_1)
         viaje.añadirCoche(car_2)
         viaje.añadirCoche(car_3)
