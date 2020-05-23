@@ -5,6 +5,6 @@ class PaymentData:
         self.nom = nom
         self.numero = numero
         self.codi = codi
-    
+
     def validateData(self):
         return type(self.nom) == str and type(self.tipus_targeta) == str and type(self.numero) == str and type(self.codi) == str 

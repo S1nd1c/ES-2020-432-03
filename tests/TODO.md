@@ -32,13 +32,13 @@ error al confirmar los vuelos, se reporta que la acción no se ha podido realiza
 ## Versión 3
 - [X] Dado un viaje con más de un viajero, cuando se añaden vehículos, el precio del
 viaje es el esperado
-- [ ] Dado un viaje con más de un viajero, cuando se quitan vehículos, el precio del
+- [X] Dado un viaje con más de un viajero, cuando se quitan vehículos, el precio del
 viaje es el esperado
-- [ ] Dado un viaje con más de un viajero, cuando se añaden alojamientos, el precio
+- [X] Dado un viaje con más de un viajero, cuando se añaden alojamientos, el precio
 del viaje es el esperado
-- [ ] Dado un viaje con más de un viajero, cuando se quitan alojamientos, el precio
+- [X] Dado un viaje con más de un viajero, cuando se quitan alojamientos, el precio
 del viaje es el esperado
-- [ ] Dado un viaje con múltiples destinos y más de un viajero, cuando se confirma
+- [X] Dado un viaje con múltiples destinos y más de un viajero, cuando se confirma
 correctamente la reserva de los vehículos, se reporta que la acción se ha
 realizado correctamente
 - [ ] Dado un viaje con múltiples destinos y más de un viajero, cuando se produce

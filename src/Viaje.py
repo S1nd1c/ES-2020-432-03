@@ -1,10 +1,10 @@
-from Hotels import Hotels
-from Flights import Flights
-from Cars import Cars
-from Skyscanner import Skyscanner
-from Booking import Booking
-from Rentalcars import Rentalcars
-from Bank import Bank
+from src.Hotels import Hotels
+from src.Flights import Flights
+from src.Cars import Cars
+from src.Skyscanner import Skyscanner
+from src.Booking import Booking
+from src.Rentalcars import Rentalcars
+from src.Bank import Bank
 class Viaje:
 
 
@@ -75,7 +75,7 @@ class Viaje:
         if vuelo not in self.lista_vuelos:
             self.lista_vuelos.append(vuelo)
 
-    def añadirHotele(self, hotel:Hotels):
+    def añadirHotel(self, hotel:Hotels):
         if hotel not in self.lista_hoteles:
             self.lista_hoteles.append(hotel)
 
@@ -89,6 +89,13 @@ class Viaje:
             if coche != del_coche:
                 lista_coches.append(coche)
         self.lista_coches = lista_coches
+
+    def quitarHotel(self, del_hotel: Hotels):
+        lista_hoteles = []
+        for hotel in self.lista_hoteles:
+            if hotel != del_hotel:
+                lista_hoteles.append(hotel)
+        self.lista_hoteles = lista_hoteles
 
     def confirmaReserva_vehicle(self):
         if not self.lista_coches:
@@ -145,7 +152,7 @@ class Viaje:
         self.confirmaReserva_vehicle()
         self.confirmaReserva_vol()
         self.precio = self.sumaPrecios()
-        if self.user.pagament(self):
+        if self.user.pagament():
             return True
         else:
             raise ValueError("Error: Pagament no realitzat correctament")

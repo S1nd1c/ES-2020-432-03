@@ -1,5 +1,5 @@
-from Rentalcars import Rentalcars
-import User
+from src.Rentalcars import Rentalcars
+from src.User import User
 
 class Cars:
 
@@ -13,7 +13,7 @@ class Cars:
         self.preu = preu
 
     def reserva_coche(self, user:User):
-        rentalcar = Rentalcars.Rentalcars()
+        rentalcar = Rentalcars()
         
         if rentalcar.confirm_reserve(user, self):
             return True

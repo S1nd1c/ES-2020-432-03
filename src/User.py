@@ -1,6 +1,5 @@
-from PaymentData import PaymentData
-from Bank import Bank 
-from Viaje import Viaje
+from src.PaymentData import PaymentData
+from src.Bank import Bank 
 
 class User:
 
@@ -18,8 +17,7 @@ class User:
     def seleccioMetodePagament(self,payment_data:PaymentData):
         self.dades_pagament=payment_data
     
-    def pagament(self, viaje:Viaje):
-        preu = viaje.precio
+    def pagament(self):
         banco = Bank()
         if self.validateInput() and self.dades_pagament.validateData():
             return banco.do_payment(self,self.dades_pagament)
